@@ -1,0 +1,34 @@
+intent	variant	clause
+app.list	2	list the running applications
+browser.page_back	2	go to the previous page
+browser.tab_list	2	show the open browser tabs
+calendar.events	1	tell me what is on my calendar today
+calendar.list	2	show the available calendars
+calendar.todo_list	2	list my calendar to-dos
+clipboard.read	1	tell me what is on my clipboard
+coding.agent.list	2	show the running coding agents
+coding.pane.current	1	show the active coding pane
+coding.pane.layout	2	tell me how the coding panes are arranged
+coding.pane.list	2	show the open coding panes
+coding.pane.neighbor	1	show the pane next to this one
+coding.pane.process_info	1	tell me what process is running in this pane
+coding.session.list	2	show the coding sessions
+coding.status	2	tell me what the coding system is doing
+coding.tab.list	2	show the open coding tabs
+coding.workspace.list	2	show the available coding workspaces
+coding.worktree.list	2	show the existing worktrees
+dictation.status	1	tell me whether dictation is running
+media.next	1	skip to the next track
+media.previous	1	go to the previous track
+meeting.status	1	tell me whether meeting capture is running
+project.list	2	show my projects
+screen.read	1	tell me what is on my screen
+speech.vocabulary_query	2	show the custom speech words
+system.battery_query	1	tell me how much battery is left
+system.status_query	2	tell me how the computer is doing
+system.time_query	1	tell me the current time
+task.list	2	show the running tasks
+task.status	1	tell me how the coding task is going
+terminal.list	2	show the terminal sessions
+terminal.read	2	tell me what the build says
+window.list	2	show the open windows

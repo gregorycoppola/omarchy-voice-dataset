@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omarchy voice source surfaces · 2026-09-24</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.45 system-ui,sans-serif; }
+  body { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+  p { max-width: 85ch; } .controls { display:flex; gap:1rem; flex-wrap:wrap; margin:1.5rem 0; }
+  input,select { font:inherit; padding:.45rem; min-width:12rem; }
+  .scroll { overflow-x:auto; } table { border-collapse:collapse; width:100%; min-width:790px; }
+  th,td { text-align:left; vertical-align:top; padding:.5rem; border-bottom:1px solid #8886; }
+  th { position:sticky; top:0; background:Canvas; } code { font-size:.9em; }
+  a { color:LinkText; }
+</style>
+<h1>Declared command surfaces</h1>
+<p>Snapshot 2026-09-24. These are source declarations, not tested voice commands. The <a href="outcomes.html">candidate outcome set</a>, <a href="index.html">typed intent matrix</a>, and <a href="docs/verification.md">verification record</a> explain what has been checked.</p>
+<div class="controls">
+  <label>Find <input id="query" type="search" placeholder="browser, volume, task…"></label>
+  <label>Project <select id="project"><option value="">All</option><option>skipper</option><option>genesis</option><option>omarvis</option><option>oma</option></select></label>
+  <label>Kind <select id="kind"><option value="">All</option></select></label>
+</div>
+<p id="count" role="status"></p>
+<div class="scroll"><table><thead><tr><th>Project</th><th>Source surface</th><th>Kind</th><th>Availability</th><th>Proposed outcome</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table></div>
+<script>
+const query=document.getElementById('query'), project=document.getElementById('project');
+const kind=document.getElementById('kind'), rows=document.getElementById('rows');
+function cell(tr,value){const td=document.createElement('td');td.textContent=value;tr.append(td);return td;}
+Promise.all(['data/source-surfaces.json','data/surface-crosswalk.json'].map(x=>fetch(x).then(r=>{if(!r.ok)throw Error(x+': '+r.status);return r.json()}))).then(([inventory,mapping])=>{
+  const surfaces=inventory.surfaces, crosswalk=mapping.crosswalk;
+  for(const value of [...new Set(surfaces.map(x=>x.kind))].sort()){const option=document.createElement('option');option.value=value;option.textContent=value;kind.append(option)}
+  function render(){rows.replaceChildren();let shown=0;
+    surfaces.forEach((item,i)=>{const outcome=crosswalk[i].candidate_intent||crosswalk[i].relationship.replaceAll('_',' ');
+      if(project.value&&item.project!==project.value)return;
+      if(kind.value&&item.kind!==kind.value)return;
+      if(![item.name,item.kind,item.project,outcome].join(' ').toLowerCase().includes(query.value.trim().toLowerCase()))return;
+      const tr=document.createElement('tr');cell(tr,item.project);
+      const name=document.createElement('code');name.textContent=item.name;const td=document.createElement('td');td.append(name);tr.append(td);
+      cell(tr,item.kind);cell(tr,item.availability);cell(tr,outcome);
+      const evidence=document.createElement('a');evidence.href=item.source;evidence.textContent=item.source.replace('../','');
+      const src=document.createElement('td');src.append(evidence);tr.append(src);rows.append(tr);shown++;
+    });document.getElementById('count').textContent=`${shown} of ${surfaces.length} source surfaces shown`}
+  [query,project,kind].forEach(x=>x.addEventListener('input',render));render();
+}).catch(e=>{document.getElementById('count').textContent='Could not load data: '+e});
+</script>
+</html>

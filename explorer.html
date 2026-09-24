@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omarchy voice intent explorer</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.5 system-ui, sans-serif; }
+  body { max-width: 1400px; margin: 0 auto; padding: 1.25rem; }
+  h1 { margin: 0 0 .25rem; } p { max-width: 85ch; }
+  a { color: LinkText; }
+  .layout { display: grid; grid-template-columns: minmax(250px, 350px) minmax(0, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+  aside { border: 1px solid #8886; border-radius: .5rem; padding: .8rem; align-self: start; }
+  input { box-sizing: border-box; width: 100%; font: inherit; padding: .5rem; }
+  #intent-list { max-height: 70vh; overflow: auto; margin-top: .75rem; }
+  #intent-list button { display: block; width: 100%; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; padding: .45rem; cursor: pointer; border-radius: .3rem; }
+  #intent-list button:hover, #intent-list button[aria-current="true"] { background: #8883; }
+  #intent-list small { display: block; opacity: .7; }
+  #detail { min-width: 0; }
+  #detail h2 { margin-top: 0; overflow-wrap: anywhere; }
+  .meta { color: GrayText; }
+  ol { padding-left: 1.8rem; }
+  li { padding: .55rem .2rem; border-bottom: 1px solid #8884; }
+  li small { display: block; color: GrayText; }
+  #segments details { border-bottom: 1px solid #8884; padding: .4rem 0; }
+  #segments summary { cursor: pointer; }
+  #sequences details { border-bottom: 1px solid #8884; padding: .4rem 0; }
+  #sequences summary { cursor: pointer; }
+  code { overflow-wrap: anywhere; }
+  @media (max-width: 750px) { .layout { display: block; } #intent-list { max-height: 28vh; } #detail { margin-top: 1.5rem; } }
+</style>
+<h1>Omarchy voice intent explorer</h1>
+<p>Browse 223 structured intents, their argument schemas, grammar templates, and ten illustrative phrases each. The first two phrases per intent are authored examples; the other eight are synthetic request frames. These are parser design data, not verified spoken commands. Skipper's “open the browser and tile” is a <a href="docs/segmentation.md">two-intent example</a>. See the <a href="docs/intent-explorer.md">Python API</a> and <a href="docs/intent-coverage.md">coverage notes</a>.</p>
+<details id="sequences"><summary><strong>Command sequences</strong></summary><div id="sequence-list"></div></details>
+<details id="segments"><summary><strong>Skipper and multi-intent examples</strong></summary><div id="segment-list"></div></details>
+<div class="layout">
+  <aside>
+    <label for="search">Search intent or phrase</label>
+    <input id="search" type="search" placeholder="browser, volume, coding…" autocomplete="off">
+    <p id="count" role="status"></p>
+    <nav id="intent-list" aria-label="Intents"></nav>
+  </aside>
+  <main id="detail" aria-live="polite"><p>Loading data…</p></main>
+</div>
+<script>
+const search = document.getElementById('search');
+const list = document.getElementById('intent-list');
+const count = document.getElementById('count');
+const detail = document.getElementById('detail');
+let intents = [], phrases = new Map(), selected = '';
+
+function choose(id) {
+  selected = id;
+  history.replaceState(null, '', '#' + encodeURIComponent(id));
+  render();
+}
+function render() {
+  const query = search.value.trim().toLocaleLowerCase();
+  const matches = intents.filter(item => [item.id, ...(phrases.get(item.id) || []).map(row => row.text)]
+    .some(value => value.toLocaleLowerCase().includes(query)));
+  count.textContent = `${matches.length} of ${intents.length} intents`;
+  list.replaceChildren();
+  for (const item of matches) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = item.id;
+    button.setAttribute('aria-current', String(item.id === selected));
+    const small = document.createElement('small');
+    small.textContent = item.status.replaceAll('_', ' ');
+    button.append(small);
+    button.addEventListener('click', () => choose(item.id));
+    list.append(button);
+  }
+  const item = intents.find(row => row.id === selected);
+  detail.replaceChildren();
+  if (!item) { detail.textContent = 'Select an intent.'; return; }
+  const title = document.createElement('h2'); title.textContent = item.id; detail.append(title);
+  const meta = document.createElement('p'); meta.className = 'meta';
+  const slots = item.arguments_schema.properties === null ? 'argument schema needs review' :
+    Object.entries(item.arguments_schema.properties).map(([key, value]) => `${key}: ${value.type || (value.oneOf ? "reference" : "union")}`).join(', ') || 'no slots';
+  meta.textContent = `${item.status.replaceAll('_', ' ')} · ${slots} · mapped projects: ${item.mapped_projects.join(', ') || 'none'}`;
+  detail.append(meta);
+  const schemaBox = document.createElement('details');
+  const schemaTitle = document.createElement('summary'); schemaTitle.textContent = 'Structured argument schema';
+  const schemaText = document.createElement('pre'); schemaText.style.whiteSpace = 'pre-wrap';
+  schemaText.textContent = JSON.stringify(item.arguments_schema, null, 2);
+  schemaBox.append(schemaTitle, schemaText); detail.append(schemaBox);
+  const grammarBox = document.createElement('details');
+  const grammarTitle = document.createElement('summary'); grammarTitle.textContent = 'Grammar templates and argument bindings';
+  const grammarText = document.createElement('pre'); grammarText.style.whiteSpace = 'pre-wrap';
+  grammarText.textContent = JSON.stringify(item.grammar, null, 2);
+  grammarBox.append(grammarTitle, grammarText); detail.append(grammarBox);
+  const heading = document.createElement('h3'); heading.textContent = 'Ten ways to say it'; detail.append(heading);
+  const ordered = document.createElement('ol');
+  for (const phrase of phrases.get(item.id) || []) {
+    const li = document.createElement('li'); li.textContent = phrase.text;
+    const small = document.createElement('small');
+    small.textContent = phrase.origin === 'synthetic_frame' ?
+      `synthetic frame · based on phrase ${phrase.base_variant} · ${phrase.frame}` :
+      'authored illustration';
+    const args = document.createElement('pre'); args.style.whiteSpace = 'pre-wrap'; args.textContent = JSON.stringify({intent: phrase.intent, arguments: phrase.arguments}, null, 2); li.append(small, args); ordered.append(li);
+  }
+  detail.append(ordered);
+}
+Promise.all(['data/catalog.json', 'data/segmentation-examples.json', 'data/command-sequences.json'].map(path =>
+  fetch(path).then(response => { if (!response.ok) throw new Error(`${path}: ${response.status}`); return response.json(); })
+)).then(([catalog, segmentData, sequenceData]) => {
+  const sequences = document.getElementById('sequence-list');
+  for (const sequence of sequenceData.sequences) {
+    const box = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = sequence.utterance.replaceAll('\n', ' / ');
+    box.append(summary);
+    const result = document.createElement('p');
+    result.textContent = `${sequence.steps.map(step => step.intent).join(' → ')} · ${sequence.evidence}` +
+      (sequence.source_command ? ` · Skipper: ${sequence.source_command}` : '');
+    box.append(result); sequences.append(box);
+  }
+  const examples = document.getElementById('segment-list');
+  for (const example of segmentData.examples) {
+    const box = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = example.utterance.replaceAll('\n', ' / ');
+    box.append(summary);
+    const result = document.createElement('p');
+    result.textContent = `${example.segments.map(step => step.intent).join(' → ')} · ${example.evidence}` +
+      (example.source_command ? ` · Skipper: ${example.source_command}` : '');
+    box.append(result); examples.append(box);
+  }
+  intents = catalog.intents.sort((a, b) => a.id.localeCompare(b.id));
+  for (const entry of catalog.intents.flatMap(intent => intent.examples)) {
+    if (!phrases.has(entry.intent)) phrases.set(entry.intent, []);
+    phrases.get(entry.intent).push(entry);
+  }
+  const requested = decodeURIComponent(location.hash.slice(1));
+  selected = intents.some(item => item.id === requested) ? requested : intents[0].id;
+  search.addEventListener('input', render);
+  window.addEventListener('hashchange', () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (intents.some(item => item.id === id)) { selected = id; render(); }
+  });
+  render();
+}).catch(error => { detail.textContent = `Could not load the dataset: ${error}. Serve this repository with a local HTTP server.`; });
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candidate Omarchy voice outcomes · 2026-09-24</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.45 system-ui,sans-serif; }
+  body { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  p { max-width: 85ch; } .controls { display:flex; gap:1rem; flex-wrap:wrap; margin:1.5rem 0; }
+  input,select { font:inherit; padding:.45rem; min-width:12rem; }
+  .scroll { overflow-x:auto; } table { border-collapse:collapse; width:100%; min-width:720px; }
+  th,td { text-align:left; vertical-align:top; padding:.55rem; border-bottom:1px solid #8886; }
+  th { position:sticky; top:0; background:Canvas; } a { color:LinkText; }
+</style>
+<h1>Candidate outcomes across twelve projects</h1>
+<p>All 223 intents now have structured argument schemas. Provider mappings remain source evidence, and execution coverage still requires adapter tests. See <a href="explorer.html">schemas, grammar and examples</a>, <a href="surfaces.html">source surfaces</a>, and <a href="docs/verification.md">verification</a>.</p>
+<div class="controls">
+  <label>Find <input id="query" type="search" placeholder="window, dictation, email…"></label>
+  <label>Project <select id="project"><option value="">All</option></select></label>
+  <label>Schema <select id="status"><option value="">All</option><option value="schema_defined">Schema defined</option></select></label>
+</div>
+<p id="count" role="status"></p>
+<div class="scroll"><table><thead><tr><th>Outcome</th><th>Schema</th><th>Slots</th><th>Mapped projects</th><th>Example phrase</th></tr></thead><tbody id="rows"></tbody></table></div>
+<script>
+const query=document.getElementById('query'), project=document.getElementById('project');
+const status=document.getElementById('status'), rows=document.getElementById('rows');
+fetch('data/outcomes.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
+  for(const id of [...new Set(data.outcomes.flatMap(x=>x.mapped_projects))].sort()){
+    const option=document.createElement('option');option.value=id;option.textContent=id;project.append(option)}
+  function cell(tr,value){const td=document.createElement('td');td.textContent=value;tr.append(td)}
+  function render(){rows.replaceChildren();let shown=0;
+    for(const item of data.outcomes){
+      if(project.value&&!item.mapped_projects.includes(project.value))continue;
+      if(status.value&&item.status!==status.value)continue;
+      if(![item.id,...item.mapped_projects,...item.examples.map(x=>x.text)].join(' ').toLowerCase().includes(query.value.trim().toLowerCase()))continue;
+      const tr=document.createElement('tr');cell(tr,item.id);cell(tr,item.status.replaceAll('_',' '));
+      cell(tr,item.slots===null?'to define':Object.entries(item.slots).map(([k,v])=>k+': '+(v.type || (v.oneOf ? 'reference' : 'union'))).join(', ')||'none');
+      cell(tr,item.mapped_projects.join(', ')||'seed only');cell(tr,item.examples[0]?.text||'—');rows.append(tr);shown++;
+    }document.getElementById('count').textContent=`${shown} of ${data.outcomes.length} outcomes shown`}
+  [query,project,status].forEach(x=>x.addEventListener('input',render));render();
+}).catch(e=>{document.getElementById('count').textContent='Could not load data: '+e});
+</script>
+</html>

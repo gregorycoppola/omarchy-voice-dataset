@@ -1,0 +1,169 @@
+intent	utterance_1	utterance_2
+agent.request	Ask the assistant to summarize this page	Have the agent explain what is on screen
+app.list	Show my open apps	Which applications are running?
+audio.mute_toggle	Toggle the sound mute	Switch mute on or off
+audio.volume_set	Set the volume to 40 percent	Make the sound level 40 percent
+browser.close	Close the browser	Shut the browser
+browser.download	Download this file	Save that download from the page
+browser.drag	Drag that item to the folder	Move this page element over there
+browser.element_focus	Focus the search box	Put the cursor in the search field
+browser.element_hover	Hover over that menu	Move the pointer over this link
+browser.form_check	Check the remember me box	Tick the terms checkbox
+browser.form_select	Select Canada from the country menu	Choose the second option in that dropdown
+browser.handoff	Hand this page to the browser agent	Let the browser agent take over this page
+browser.open	Open the browser	Bring up the browser
+browser.page_forward	Go forward one page	Return to the next page in browser history
+browser.page_reload	Reload this page	Refresh the current website
+browser.tab_list	List my browser tabs	Which tabs are open?
+browser.tabs_clear	Clear every open browser tab	Remove all tabs from the browser
+browser.upload	Upload the report to this page	Choose the report file for this form
+browser.wait	Wait for the page to load	Pause until the page is ready
+calendar.events	What events are on my calendar today?	Show today's calendar events
+calendar.list	List my calendars	Which calendars can I use?
+calendar.todo_create	Add a calendar to-do to call Sam	Create a to-do in my calendar for calling Sam
+calendar.todo_list	Show my calendar to-dos	What to-dos are in my calendar?
+camera.inspect	Look at the camera image	Describe what the camera sees
+clipboard.manage	Open clipboard history	Show the clipboard manager
+coding.agent.explain	Explain what coding agent one is doing	Summarize agent one's work
+coding.agent.focus	Focus coding agent one	Switch to agent one's pane
+coding.agent.get	Show coding agent one's details	Get information about agent one
+coding.agent.list	List the coding agents	Which coding agents are running?
+coding.agent.prompt	Prompt agent one to review this change	Ask coding agent one to review this change
+coding.agent.read	Read coding agent one's output	Show what agent one said
+coding.agent.rename	Rename coding agent one to reviewer	Call agent one reviewer
+coding.agent.send_keys	Send Enter to coding agent one	Press Escape in agent one's pane
+coding.agent.start	Start a coding agent for this task	Launch a new coding agent
+coding.api.snapshot	Capture the coding API snapshot	Show the current coding API snapshot
+coding.notification.show	Show coding notifications	Open the coding notification list
+coding.pane.close	Close this coding pane	Remove the current pane
+coding.pane.current	Which coding pane is active?	Show the current pane
+coding.pane.edges	Show this pane's edges	Get the boundaries of the current pane
+coding.pane.focus	Focus the pane on the right	Switch to the right coding pane
+coding.pane.get	Show details for pane one	Get pane one's information
+coding.pane.input	Type the command into pane one	Enter this text in the coding pane
+coding.pane.layout	Show the pane layout	How are my coding panes arranged?
+coding.pane.list	List the coding panes	Which panes are open?
+coding.pane.move	Move this pane to the left	Put the current pane on the left
+coding.pane.neighbor	Which pane is next to this one?	Find the neighboring pane
+coding.pane.process_info	What process is running in this pane?	Show the pane's process information
+coding.pane.read	Read the current coding pane	Show the text in this pane
+coding.pane.rename	Rename this pane to tests	Call the current pane tests
+coding.pane.resize	Make this pane wider	Increase the current pane's width
+coding.pane.run	Run the tests in this pane	Execute the test command in the current pane
+coding.pane.send_keys	Send Control C to this pane	Press Enter in the current pane
+coding.pane.send_text	Send this text to the current pane	Paste the following text into this pane
+coding.pane.split	Split this pane vertically	Create a pane beside this one
+coding.pane.swap	Swap this pane with the one on the right	Exchange these two panes
+coding.pane.zoom	Zoom this pane	Make the current pane fill the view
+coding.server.reload_config	Reload the coding server configuration	Apply the server config again
+coding.server.stop	Stop the coding server	Shut down the coding server
+coding.session.delete	Delete coding session one	Remove the saved coding session
+coding.session.list	List coding sessions	Which coding sessions exist?
+coding.session.stop	Stop coding session one	End the active coding session
+coding.status	Show coding status	What is the coding system doing?
+coding.tab.close	Close this coding tab	Remove the current tab
+coding.tab.create	Create a coding tab	Open a new coding tab
+coding.tab.focus	Focus coding tab two	Switch to the second coding tab
+coding.tab.get	Show details for coding tab two	Get information about tab two
+coding.tab.list	List coding tabs	Which coding tabs are open?
+coding.tab.rename	Rename this coding tab to review	Call the current tab review
+coding.workspace.close	Close this coding workspace	Shut the current coding workspace
+coding.workspace.create	Create a coding workspace for the app	Start a new coding workspace for the app
+coding.workspace.focus	Focus the app coding workspace	Switch to the app workspace
+coding.workspace.get	Show details for the app workspace	Get information about this coding workspace
+coding.workspace.list	List coding workspaces	Which coding workspaces are available?
+coding.workspace.rename	Rename this coding workspace to app	Call this workspace app
+coding.worktree.create	Create a worktree for the fix	Make a new worktree for this change
+coding.worktree.list	List the worktrees	Which worktrees exist?
+coding.worktree.open	Open the fix worktree	Switch to that worktree
+coding.worktree.remove	Remove the old worktree	Delete that worktree
+dictation.cancel	Cancel this dictation	Discard what I just dictated
+dictation.capture	Capture my speech as text	Record this utterance for transcription
+dictation.chat	Start voice chat	Open the dictation chat mode
+dictation.history	Show my dictation history	List previous transcriptions
+dictation.history_paste	Paste the last dictation	Insert my previous transcription
+dictation.output_set	Send dictation to the clipboard	Change the dictation output to clipboard
+dictation.paste_keys_set	Use Control V to paste dictation	Set the dictation paste shortcut to Control V
+dictation.restart	Restart dictation	Start the dictation service again
+dictation.start	Start dictation	Begin transcribing my speech
+dictation.status	Is dictation running?	Show the dictation status
+dictation.stop	Stop dictation	End the current dictation
+dictation.submit	Submit this dictation	Send the transcribed text now
+dictation.toggle	Toggle dictation	Switch dictation on or off
+display.brightness_set	Set brightness to 60 percent	Make the screen 60 percent bright
+email.read	Read the latest email	Show me the newest message in my inbox
+email.reply	Reply to Sam's email	Write a response to that message
+email.search	Find emails from Sam	Search my mail for the invoice
+email.send	Send an email to Sam	Email the report to Sam
+extension.failure_report	Show extension failures	Report which extension commands failed
+extension.ipc_call	Call the extension's status endpoint	Send a status request to the extension
+extension.script_run	Run the configured extension script	Execute the extension action
+file.list	List files in Downloads	Show what is in my Downloads folder
+file.open	Open the report file	Launch the selected document
+file.read	Read the report file	Show the contents of that document
+file.search	Find files named report	Search for the report document
+input.keypress	Press Control S	Send the Escape key
+input.type_text	Type hello world	Enter the words hello world
+media.play_pause	Toggle playback	Switch between play and pause
+meeting.delete	Delete yesterday's meeting recording	Remove that saved meeting
+meeting.export	Export the meeting transcript	Save a copy of the meeting notes
+meeting.join	Join the team meeting	Enter the current meeting
+meeting.label	Label this meeting weekly sync	Name the recording weekly sync
+meeting.list	List my meetings	Show the saved meeting sessions
+meeting.pause	Pause meeting capture	Temporarily stop recording the meeting
+meeting.resume	Resume meeting capture	Continue recording the meeting
+meeting.show	Show the weekly sync meeting	Open that meeting's details
+meeting.start	Start meeting capture	Begin recording this meeting
+meeting.status	Is the meeting recorder running?	Show meeting capture status
+meeting.stop	Stop meeting capture	Finish recording this meeting
+meeting.summarize	Summarize the meeting	Give me a recap of that meeting
+message.send	Send Sam a message	Message Sam about the meeting
+network.connect_open	Connect to the guest Wi-Fi	Join the open guest network
+network.connect_saved	Connect to my saved home Wi-Fi	Join the remembered home network
+network.disconnect	Disconnect from Wi-Fi	Leave the current wireless network
+network.wifi_disable	Turn off Wi-Fi	Disable the wireless adapter
+network.wifi_enable	Turn on Wi-Fi	Enable the wireless adapter
+project.comment	Comment on this project item	Add a note to the current project task
+project.list	List my projects	Which projects do I have?
+project.search	Find the website project	Search my projects for the website
+project.todo_create	Add a project to-do to review the design	Create a project task for the design review
+project.todo_list	Show the project to-dos	List tasks in this project
+routine.schedule	Schedule the morning routine for eight	Run my morning routine at eight
+screen.click_text	Click the text that says Continue	Select the Continue label on screen
+smarthome.device_toggle	Toggle the kitchen lights	Switch the kitchen lights on or off
+smarthome.scene_activate	Activate movie night	Turn on the movie night scene
+speech.backend_set	Use the local speech backend	Change speech output to the local backend
+speech.correction_save	Remember that transcription correction	Save my correction for that word
+speech.engine_set	Use the Whisper speech engine	Switch speech recognition to Whisper
+speech.language_set	Set speech language to English	Use English for speech recognition
+speech.model_install	Install the small speech model	Download the small transcription model
+speech.read_screen	Read the screen aloud	Speak what is on screen
+speech.read_selection	Read the selected text aloud	Speak my current selection
+speech.route	Send speech output to the headphones	Route spoken audio to the headset
+speech.speed_set	Set speech speed to 1.2 times	Speak twenty percent faster
+speech.stop	Stop speaking	Silence the current speech output
+speech.transcribe_file	Transcribe the interview file	Turn that audio file into text
+speech.vocabulary_query	Show my speech vocabulary	Which custom words do you know?
+speech.voice_install	Install the Alex voice	Download the Alex speech voice
+speech.voice_select	Select the Alex voice	Speak with the Alex voice
+system.idle_set	Set idle timeout to ten minutes	Make the computer idle after ten minutes
+system.idle_toggle	Toggle idle handling	Switch the idle service on or off
+system.logout	Log me out	End my desktop session
+system.menu_open	Open the system menu	Show the Omarchy menu
+system.nightlight_toggle	Toggle night light	Switch the warm screen filter on or off
+system.notifications_silence_toggle	Toggle do not disturb	Switch notification sounds on or off
+system.panel_open	Open the system panel	Show the control panel
+system.status_query	Show system status	How is my computer doing?
+system.wait	Wait ten seconds	Pause for ten seconds
+task.cancel	Cancel task one	Stop that background task
+task.list	List my tasks	Which tasks are running?
+task.read	Read task one's output	Show what that task produced
+task.resume	Resume task one	Continue the paused task
+terminal.list	List open terminals	Which terminal sessions exist?
+terminal.open	Open a terminal	Launch a new terminal window
+tv.remote_action	Press volume up on the TV remote	Send the TV a channel up command
+web.search	Search the web for Omarchy docs	Look online for Omarchy documentation
+window.compose	Arrange these windows side by side	Put the windows into a layout
+window.manage	Manage the focused window	Open controls for this window
+window.tile_pair	Tile this window with the browser	Put this window beside the browser
+workspace.manage	Manage this workspace	Open controls for the current workspace

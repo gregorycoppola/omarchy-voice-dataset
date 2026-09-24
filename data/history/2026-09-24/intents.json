@@ -1,0 +1,2340 @@
+{
+  "schema_version": 1,
+  "status": "partial_source_inventory",
+  "intents": [
+    {
+      "id": "app.launch",
+      "slots": {
+        "application": "string"
+      },
+      "examples": [
+        {
+          "text": "Open Firefox",
+          "parsed": {
+            "intent": "app.launch",
+            "arguments": {
+              "application": "firefox"
+            }
+          }
+        },
+        {
+          "text": "Start the browser",
+          "parsed": {
+            "intent": "app.launch",
+            "arguments": {
+              "application": "browser"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "app.focus",
+      "slots": {
+        "application": "string"
+      },
+      "examples": [
+        {
+          "text": "Focus Firefox",
+          "parsed": {
+            "intent": "app.focus",
+            "arguments": {
+              "application": "firefox"
+            }
+          }
+        },
+        {
+          "text": "Bring my browser forward",
+          "parsed": {
+            "intent": "app.focus",
+            "arguments": {
+              "application": "browser"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "app.close",
+      "slots": {
+        "application": "string",
+        "selection": "enum"
+      },
+      "examples": [
+        {
+          "text": "Close Discord",
+          "parsed": {
+            "intent": "app.close",
+            "arguments": {
+              "application": "discord",
+              "selection": "unspecified"
+            }
+          }
+        },
+        {
+          "text": "Close the browser window",
+          "parsed": {
+            "intent": "app.close",
+            "arguments": {
+              "application": "browser",
+              "selection": "unspecified"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.focus",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Focus the terminal",
+          "parsed": {
+            "intent": "window.focus",
+            "arguments": {
+              "target": "terminal"
+            }
+          }
+        },
+        {
+          "text": "Switch to the GitHub window",
+          "parsed": {
+            "intent": "window.focus",
+            "arguments": {
+              "target": "github_window"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.close",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Close this window",
+          "parsed": {
+            "intent": "window.close",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        },
+        {
+          "text": "Close the terminal",
+          "parsed": {
+            "intent": "window.close",
+            "arguments": {
+              "target": "terminal"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.move_monitor",
+      "slots": {
+        "target": "window",
+        "monitor": "monitor"
+      },
+      "examples": [
+        {
+          "text": "Move this window to the other screen",
+          "parsed": {
+            "intent": "window.move_monitor",
+            "arguments": {
+              "target": "current_window",
+              "monitor": "other"
+            }
+          }
+        },
+        {
+          "text": "Put Discord on the other monitor",
+          "parsed": {
+            "intent": "window.move_monitor",
+            "arguments": {
+              "target": "discord",
+              "monitor": "other"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.maximize",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Maximize this window",
+          "parsed": {
+            "intent": "window.maximize",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        },
+        {
+          "text": "Maximize Firefox",
+          "parsed": {
+            "intent": "window.maximize",
+            "arguments": {
+              "target": "firefox"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.tile",
+      "slots": {
+        "scope": "enum"
+      },
+      "examples": [
+        {
+          "text": "Tile open windows",
+          "parsed": {
+            "intent": "window.tile",
+            "arguments": {
+              "scope": "open_windows"
+            }
+          }
+        },
+        {
+          "text": "Tile the terminals",
+          "parsed": {
+            "intent": "window.tile",
+            "arguments": {
+              "scope": "terminals"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py",
+          "constraint": "current workspace and selected categories"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.list",
+      "slots": {
+        "scope": "enum"
+      },
+      "examples": [
+        {
+          "text": "List open windows",
+          "parsed": {
+            "intent": "window.list",
+            "arguments": {
+              "scope": "open_windows"
+            }
+          }
+        },
+        {
+          "text": "What windows are open?",
+          "parsed": {
+            "intent": "window.list",
+            "arguments": {
+              "scope": "open_windows"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.fullscreen",
+      "slots": {
+        "target": "window",
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Make this window fullscreen",
+          "parsed": {
+            "intent": "window.fullscreen",
+            "arguments": {
+              "target": "current_window",
+              "state": "on"
+            }
+          }
+        },
+        {
+          "text": "Exit fullscreen",
+          "parsed": {
+            "intent": "window.fullscreen",
+            "arguments": {
+              "target": "current_window",
+              "state": "off"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "tool",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.float",
+      "slots": {
+        "target": "window",
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Float this window",
+          "parsed": {
+            "intent": "window.float",
+            "arguments": {
+              "target": "current_window",
+              "state": "on"
+            }
+          }
+        },
+        {
+          "text": "Make the active window tiled",
+          "parsed": {
+            "intent": "window.float",
+            "arguments": {
+              "target": "current_window",
+              "state": "off"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "window.hide",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Hide this window",
+          "parsed": {
+            "intent": "window.hide",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        },
+        {
+          "text": "Hide all terminals",
+          "parsed": {
+            "intent": "window.hide",
+            "arguments": {
+              "target": "all_terminals"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "workspace.switch",
+      "slots": {
+        "workspace": "integer"
+      },
+      "examples": [
+        {
+          "text": "Go to workspace 2",
+          "parsed": {
+            "intent": "workspace.switch",
+            "arguments": {
+              "workspace": 2
+            }
+          }
+        },
+        {
+          "text": "Switch to workspace 4",
+          "parsed": {
+            "intent": "workspace.switch",
+            "arguments": {
+              "workspace": 4
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "workspace.move_window",
+      "slots": {
+        "target": "window",
+        "workspace": "integer"
+      },
+      "examples": [
+        {
+          "text": "Move this window to workspace 3",
+          "parsed": {
+            "intent": "workspace.move_window",
+            "arguments": {
+              "target": "current_window",
+              "workspace": 3
+            }
+          }
+        },
+        {
+          "text": "Send Firefox to workspace 2",
+          "parsed": {
+            "intent": "workspace.move_window",
+            "arguments": {
+              "target": "firefox",
+              "workspace": 2
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "audio.volume_up",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Turn the volume up",
+          "parsed": {
+            "intent": "audio.volume_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Make it louder",
+          "parsed": {
+            "intent": "audio.volume_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "audio.volume_down",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Turn the volume down",
+          "parsed": {
+            "intent": "audio.volume_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Make it quieter",
+          "parsed": {
+            "intent": "audio.volume_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "audio.mute",
+      "slots": {
+        "state": "true"
+      },
+      "examples": [
+        {
+          "text": "Mute the sound",
+          "parsed": {
+            "intent": "audio.mute",
+            "arguments": {
+              "state": true
+            }
+          }
+        },
+        {
+          "text": "Mute audio",
+          "parsed": {
+            "intent": "audio.mute",
+            "arguments": {
+              "state": true
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "audio.unmute",
+      "slots": {
+        "state": "false"
+      },
+      "examples": [
+        {
+          "text": "Unmute the sound",
+          "parsed": {
+            "intent": "audio.unmute",
+            "arguments": {
+              "state": false
+            }
+          }
+        },
+        {
+          "text": "Turn sound back on",
+          "parsed": {
+            "intent": "audio.unmute",
+            "arguments": {
+              "state": false
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "display.brightness_up",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Increase brightness",
+          "parsed": {
+            "intent": "display.brightness_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Make the screen brighter",
+          "parsed": {
+            "intent": "display.brightness_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "display.brightness_down",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Decrease brightness",
+          "parsed": {
+            "intent": "display.brightness_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Dim the screen",
+          "parsed": {
+            "intent": "display.brightness_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "media.play",
+      "slots": {
+        "state": "play"
+      },
+      "examples": [
+        {
+          "text": "Play music",
+          "parsed": {
+            "intent": "media.play",
+            "arguments": {
+              "state": "play"
+            }
+          }
+        },
+        {
+          "text": "Resume playback",
+          "parsed": {
+            "intent": "media.play",
+            "arguments": {
+              "state": "play"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "media.pause",
+      "slots": {
+        "state": "pause"
+      },
+      "examples": [
+        {
+          "text": "Pause music",
+          "parsed": {
+            "intent": "media.pause",
+            "arguments": {
+              "state": "pause"
+            }
+          }
+        },
+        {
+          "text": "Stop playback",
+          "parsed": {
+            "intent": "media.pause",
+            "arguments": {
+              "state": "pause"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "media.next",
+      "slots": {
+        "direction": "next"
+      },
+      "examples": [
+        {
+          "text": "Next track",
+          "parsed": {
+            "intent": "media.next",
+            "arguments": {
+              "direction": "next"
+            }
+          }
+        },
+        {
+          "text": "Skip this song",
+          "parsed": {
+            "intent": "media.next",
+            "arguments": {
+              "direction": "next"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "media.previous",
+      "slots": {
+        "direction": "previous"
+      },
+      "examples": [
+        {
+          "text": "Previous track",
+          "parsed": {
+            "intent": "media.previous",
+            "arguments": {
+              "direction": "previous"
+            }
+          }
+        },
+        {
+          "text": "Go back a track",
+          "parsed": {
+            "intent": "media.previous",
+            "arguments": {
+              "direction": "previous"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/desktop_commands.py"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.lock",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Lock the screen",
+          "parsed": {
+            "intent": "system.lock",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Lock my computer",
+          "parsed": {
+            "intent": "system.lock",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.suspend",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Put the computer to sleep",
+          "parsed": {
+            "intent": "system.suspend",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Suspend the system",
+          "parsed": {
+            "intent": "system.suspend",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.shutdown",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Shut down the computer",
+          "parsed": {
+            "intent": "system.shutdown",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Power off this machine",
+          "parsed": {
+            "intent": "system.shutdown",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.reboot",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Restart the computer",
+          "parsed": {
+            "intent": "system.reboot",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Reboot the machine",
+          "parsed": {
+            "intent": "system.reboot",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.screenshot",
+      "slots": {
+        "target": "enum"
+      },
+      "examples": [
+        {
+          "text": "Take a screenshot",
+          "parsed": {
+            "intent": "system.screenshot",
+            "arguments": {
+              "target": "screen"
+            }
+          }
+        },
+        {
+          "text": "Capture the screen",
+          "parsed": {
+            "intent": "system.screenshot",
+            "arguments": {
+              "target": "screen"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.theme_set",
+      "slots": {
+        "theme": "string"
+      },
+      "examples": [
+        {
+          "text": "Switch theme to Tokyo Night",
+          "parsed": {
+            "intent": "system.theme_set",
+            "arguments": {
+              "theme": "tokyo_night"
+            }
+          }
+        },
+        {
+          "text": "Apply the light theme",
+          "parsed": {
+            "intent": "system.theme_set",
+            "arguments": {
+              "theme": "light"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.power_profile_set",
+      "slots": {
+        "profile": "enum"
+      },
+      "examples": [
+        {
+          "text": "Set power mode to performance",
+          "parsed": {
+            "intent": "system.power_profile_set",
+            "arguments": {
+              "profile": "performance"
+            }
+          }
+        },
+        {
+          "text": "Use power saver",
+          "parsed": {
+            "intent": "system.power_profile_set",
+            "arguments": {
+              "profile": "power_saver"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.battery_query",
+      "slots": {},
+      "examples": [
+        {
+          "text": "How much battery is left?",
+          "parsed": {
+            "intent": "system.battery_query",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Tell me the battery level",
+          "parsed": {
+            "intent": "system.battery_query",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "system.time_query",
+      "slots": {},
+      "examples": [
+        {
+          "text": "What time is it?",
+          "parsed": {
+            "intent": "system.time_query",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Tell me the time",
+          "parsed": {
+            "intent": "system.time_query",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.navigate",
+      "slots": {
+        "url_or_destination": "string"
+      },
+      "examples": [
+        {
+          "text": "Open GitHub",
+          "parsed": {
+            "intent": "browser.navigate",
+            "arguments": {
+              "url_or_destination": "github"
+            }
+          }
+        },
+        {
+          "text": "Go to example.com",
+          "parsed": {
+            "intent": "browser.navigate",
+            "arguments": {
+              "url_or_destination": "https://example.com"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py",
+          "constraint": "authored destinations only"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.tab_new",
+      "slots": {
+        "url": "optional_string"
+      },
+      "examples": [
+        {
+          "text": "Open a new GitHub tab",
+          "parsed": {
+            "intent": "browser.tab_new",
+            "arguments": {
+              "url": "github"
+            }
+          }
+        },
+        {
+          "text": "Create a new tab",
+          "parsed": {
+            "intent": "browser.tab_new",
+            "arguments": {
+              "url": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py",
+          "constraint": "authored destinations only"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.tab_close",
+      "slots": {
+        "target": "tab"
+      },
+      "examples": [
+        {
+          "text": "Close this tab",
+          "parsed": {
+            "intent": "browser.tab_close",
+            "arguments": {
+              "target": "current_tab"
+            }
+          }
+        },
+        {
+          "text": "Close all browser tabs",
+          "parsed": {
+            "intent": "browser.tab_close",
+            "arguments": {
+              "target": "all_browser_tabs"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "explicit",
+          "evidence": "../private/command_catalog.py"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.tab_switch",
+      "slots": {
+        "target": "tab"
+      },
+      "examples": [
+        {
+          "text": "Switch to tab two",
+          "parsed": {
+            "intent": "browser.tab_switch",
+            "arguments": {
+              "target": "tab_2"
+            }
+          }
+        },
+        {
+          "text": "Go to the GitHub tab",
+          "parsed": {
+            "intent": "browser.tab_switch",
+            "arguments": {
+              "target": "github_tab"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.page_back",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Go back in the browser",
+          "parsed": {
+            "intent": "browser.page_back",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Previous page",
+          "parsed": {
+            "intent": "browser.page_back",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.page_scroll",
+      "slots": {
+        "direction": "enum",
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Scroll down",
+          "parsed": {
+            "intent": "browser.page_scroll",
+            "arguments": {
+              "direction": "down",
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Scroll the page to the left",
+          "parsed": {
+            "intent": "browser.page_scroll",
+            "arguments": {
+              "direction": "left",
+              "amount": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.element_click",
+      "slots": {
+        "target": "element"
+      },
+      "examples": [
+        {
+          "text": "Click the sign in button",
+          "parsed": {
+            "intent": "browser.element_click",
+            "arguments": {
+              "target": "sign_in_button"
+            }
+          }
+        },
+        {
+          "text": "Click the highlighted link",
+          "parsed": {
+            "intent": "browser.element_click",
+            "arguments": {
+              "target": "highlighted_link"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.form_fill",
+      "slots": {
+        "target": "element",
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Fill email with me@example.com",
+          "parsed": {
+            "intent": "browser.form_fill",
+            "arguments": {
+              "target": "email",
+              "text": "me@example.com"
+            }
+          }
+        },
+        {
+          "text": "Type my name into the form",
+          "parsed": {
+            "intent": "browser.form_fill",
+            "arguments": {
+              "target": "name",
+              "text": "my name"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "browser.page_read",
+      "slots": {
+        "target": "optional_string"
+      },
+      "examples": [
+        {
+          "text": "Read this page",
+          "parsed": {
+            "intent": "browser.page_read",
+            "arguments": {
+              "target": "current_page"
+            }
+          }
+        },
+        {
+          "text": "Summarize the current page",
+          "parsed": {
+            "intent": "browser.page_read",
+            "arguments": {
+              "target": "current_page"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "reminder.create",
+      "slots": {
+        "message": "string",
+        "delay": "optional_duration"
+      },
+      "examples": [
+        {
+          "text": "Remind me in ten minutes to stretch",
+          "parsed": {
+            "intent": "reminder.create",
+            "arguments": {
+              "message": "stretch",
+              "delay": "PT10M"
+            }
+          }
+        },
+        {
+          "text": "Set a reminder to call Alex",
+          "parsed": {
+            "intent": "reminder.create",
+            "arguments": {
+              "message": "call Alex",
+              "delay": null
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "speech.say",
+      "slots": {
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Say hello",
+          "parsed": {
+            "intent": "speech.say",
+            "arguments": {
+              "text": "hello"
+            }
+          }
+        },
+        {
+          "text": "Speak the current time",
+          "parsed": {
+            "intent": "speech.say",
+            "arguments": {
+              "text": "the current time"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "explicit",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "tool",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "smarthome.device_set",
+      "slots": {
+        "device": "string",
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Turn off the living room lights",
+          "parsed": {
+            "intent": "smarthome.device_set",
+            "arguments": {
+              "device": "living_room_lights",
+              "state": "off"
+            }
+          }
+        },
+        {
+          "text": "Switch on the fan",
+          "parsed": {
+            "intent": "smarthome.device_set",
+            "arguments": {
+              "device": "fan",
+              "state": "on"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "extension",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "id": "tv.power_set",
+      "slots": {
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Turn on the TV",
+          "parsed": {
+            "intent": "tv.power_set",
+            "arguments": {
+              "state": "on"
+            }
+          }
+        },
+        {
+          "text": "Switch off the television",
+          "parsed": {
+            "intent": "tv.power_set",
+            "arguments": {
+              "state": "off"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "extension",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "id": "terminal.read",
+      "slots": {
+        "target": "terminal"
+      },
+      "examples": [
+        {
+          "text": "Read the terminal output",
+          "parsed": {
+            "intent": "terminal.read",
+            "arguments": {
+              "target": "terminal"
+            }
+          }
+        },
+        {
+          "text": "What does the build say?",
+          "parsed": {
+            "intent": "terminal.read",
+            "arguments": {
+              "target": "build_terminal"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "terminal.run",
+      "slots": {
+        "target": "terminal",
+        "command": "string"
+      },
+      "examples": [
+        {
+          "text": "Run the tests in this terminal",
+          "parsed": {
+            "intent": "terminal.run",
+            "arguments": {
+              "target": "current_terminal",
+              "command": "run the tests"
+            }
+          }
+        },
+        {
+          "text": "Execute make build",
+          "parsed": {
+            "intent": "terminal.run",
+            "arguments": {
+              "target": "current_terminal",
+              "command": "make build"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "terminal.watch",
+      "slots": {
+        "target": "terminal"
+      },
+      "examples": [
+        {
+          "text": "Tell me when the build finishes",
+          "parsed": {
+            "intent": "terminal.watch",
+            "arguments": {
+              "target": "build_terminal"
+            }
+          }
+        },
+        {
+          "text": "Notify me when this terminal is idle",
+          "parsed": {
+            "intent": "terminal.watch",
+            "arguments": {
+              "target": "current_terminal"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "task.submit",
+      "slots": {
+        "goal": "string"
+      },
+      "examples": [
+        {
+          "text": "Start a coding task to fix the tests",
+          "parsed": {
+            "intent": "task.submit",
+            "arguments": {
+              "goal": "fix the tests"
+            }
+          }
+        },
+        {
+          "text": "Analyze this repository in the background",
+          "parsed": {
+            "intent": "task.submit",
+            "arguments": {
+              "goal": "analyze this repository"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "extension",
+          "evidence": "../other-apps/genesis/bin/intent"
+        },
+        "omarvis": {
+          "status": "tool",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "task.status",
+      "slots": {
+        "task_id": "string"
+      },
+      "examples": [
+        {
+          "text": "How is the coding task going?",
+          "parsed": {
+            "intent": "task.status",
+            "arguments": {
+              "task_id": "current_coding_task"
+            }
+          }
+        },
+        {
+          "text": "Check the agent status",
+          "parsed": {
+            "intent": "task.status",
+            "arguments": {
+              "task_id": "current_agent"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarvis/omarvis/catalog.py"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "clipboard.read",
+      "slots": {},
+      "examples": [
+        {
+          "text": "What is on my clipboard?",
+          "parsed": {
+            "intent": "clipboard.read",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Read the clipboard",
+          "parsed": {
+            "intent": "clipboard.read",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "clipboard.write",
+      "slots": {
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Copy hello to the clipboard",
+          "parsed": {
+            "intent": "clipboard.write",
+            "arguments": {
+              "text": "hello"
+            }
+          }
+        },
+        {
+          "text": "Put this text on my clipboard",
+          "parsed": {
+            "intent": "clipboard.write",
+            "arguments": {
+              "text": "this text"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "notes.remember",
+      "slots": {
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Remember that the server is on port 8080",
+          "parsed": {
+            "intent": "notes.remember",
+            "arguments": {
+              "text": "the server is on port 8080"
+            }
+          }
+        },
+        {
+          "text": "Save this note",
+          "parsed": {
+            "intent": "notes.remember",
+            "arguments": {
+              "text": "this note"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    },
+    {
+      "id": "screen.read",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "What is on my screen?",
+          "parsed": {
+            "intent": "screen.read",
+            "arguments": {
+              "target": "screen"
+            }
+          }
+        },
+        {
+          "text": "Read the visible window",
+          "parsed": {
+            "intent": "screen.read",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        }
+      ],
+      "support": {
+        "skipper": {
+          "status": "unknown"
+        },
+        "genesis": {
+          "status": "unknown"
+        },
+        "omarvis": {
+          "status": "unknown"
+        },
+        "oma": {
+          "status": "explicit",
+          "evidence": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+        }
+      }
+    }
+  ]
+}

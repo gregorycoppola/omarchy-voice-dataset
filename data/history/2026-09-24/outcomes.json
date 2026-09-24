@@ -1,0 +1,3179 @@
+{
+  "schema_version": 1,
+  "status": "candidate_outcomes_not_voice_validation",
+  "outcomes": [
+    {
+      "id": "app.close",
+      "status": "typed_seed",
+      "slots": {
+        "application": "string",
+        "selection": "enum"
+      },
+      "examples": [
+        {
+          "text": "Close Discord",
+          "parsed": {
+            "intent": "app.close",
+            "arguments": {
+              "application": "discord",
+              "selection": "unspecified"
+            }
+          }
+        },
+        {
+          "text": "Close the browser window",
+          "parsed": {
+            "intent": "app.close",
+            "arguments": {
+              "application": "browser",
+              "selection": "unspecified"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "app.focus",
+      "status": "typed_seed",
+      "slots": {
+        "application": "string"
+      },
+      "examples": [
+        {
+          "text": "Focus Firefox",
+          "parsed": {
+            "intent": "app.focus",
+            "arguments": {
+              "application": "firefox"
+            }
+          }
+        },
+        {
+          "text": "Bring my browser forward",
+          "parsed": {
+            "intent": "app.focus",
+            "arguments": {
+              "application": "browser"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "app.launch",
+      "status": "typed_seed",
+      "slots": {
+        "application": "string"
+      },
+      "examples": [
+        {
+          "text": "Open Firefox",
+          "parsed": {
+            "intent": "app.launch",
+            "arguments": {
+              "application": "firefox"
+            }
+          }
+        },
+        {
+          "text": "Start the browser",
+          "parsed": {
+            "intent": "app.launch",
+            "arguments": {
+              "application": "browser"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "oma",
+        "omapilot",
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "audio.mute",
+      "status": "typed_seed",
+      "slots": {
+        "state": "true"
+      },
+      "examples": [
+        {
+          "text": "Mute the sound",
+          "parsed": {
+            "intent": "audio.mute",
+            "arguments": {
+              "state": true
+            }
+          }
+        },
+        {
+          "text": "Mute audio",
+          "parsed": {
+            "intent": "audio.mute",
+            "arguments": {
+              "state": true
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "audio.unmute",
+      "status": "typed_seed",
+      "slots": {
+        "state": "false"
+      },
+      "examples": [
+        {
+          "text": "Unmute the sound",
+          "parsed": {
+            "intent": "audio.unmute",
+            "arguments": {
+              "state": false
+            }
+          }
+        },
+        {
+          "text": "Turn sound back on",
+          "parsed": {
+            "intent": "audio.unmute",
+            "arguments": {
+              "state": false
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "audio.volume_down",
+      "status": "typed_seed",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Turn the volume down",
+          "parsed": {
+            "intent": "audio.volume_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Make it quieter",
+          "parsed": {
+            "intent": "audio.volume_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "skipper"
+      ]
+    },
+    {
+      "id": "audio.volume_up",
+      "status": "typed_seed",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Turn the volume up",
+          "parsed": {
+            "intent": "audio.volume_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Make it louder",
+          "parsed": {
+            "intent": "audio.volume_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "skipper"
+      ]
+    },
+    {
+      "id": "browser.element_click",
+      "status": "typed_seed",
+      "slots": {
+        "target": "element"
+      },
+      "examples": [
+        {
+          "text": "Click the sign in button",
+          "parsed": {
+            "intent": "browser.element_click",
+            "arguments": {
+              "target": "sign_in_button"
+            }
+          }
+        },
+        {
+          "text": "Click the highlighted link",
+          "parsed": {
+            "intent": "browser.element_click",
+            "arguments": {
+              "target": "highlighted_link"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.form_fill",
+      "status": "typed_seed",
+      "slots": {
+        "target": "element",
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Fill email with me@example.com",
+          "parsed": {
+            "intent": "browser.form_fill",
+            "arguments": {
+              "target": "email",
+              "text": "me@example.com"
+            }
+          }
+        },
+        {
+          "text": "Type my name into the form",
+          "parsed": {
+            "intent": "browser.form_fill",
+            "arguments": {
+              "target": "name",
+              "text": "my name"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.navigate",
+      "status": "typed_seed",
+      "slots": {
+        "url_or_destination": "string"
+      },
+      "examples": [
+        {
+          "text": "Open GitHub",
+          "parsed": {
+            "intent": "browser.navigate",
+            "arguments": {
+              "url_or_destination": "github"
+            }
+          }
+        },
+        {
+          "text": "Go to example.com",
+          "parsed": {
+            "intent": "browser.navigate",
+            "arguments": {
+              "url_or_destination": "https://example.com"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma",
+        "omarvis",
+        "skipper"
+      ]
+    },
+    {
+      "id": "browser.page_back",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Go back in the browser",
+          "parsed": {
+            "intent": "browser.page_back",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Previous page",
+          "parsed": {
+            "intent": "browser.page_back",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.page_read",
+      "status": "typed_seed",
+      "slots": {
+        "target": "optional_string"
+      },
+      "examples": [
+        {
+          "text": "Read this page",
+          "parsed": {
+            "intent": "browser.page_read",
+            "arguments": {
+              "target": "current_page"
+            }
+          }
+        },
+        {
+          "text": "Summarize the current page",
+          "parsed": {
+            "intent": "browser.page_read",
+            "arguments": {
+              "target": "current_page"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma",
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.page_scroll",
+      "status": "typed_seed",
+      "slots": {
+        "direction": "enum",
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Scroll down",
+          "parsed": {
+            "intent": "browser.page_scroll",
+            "arguments": {
+              "direction": "down",
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Scroll the page to the left",
+          "parsed": {
+            "intent": "browser.page_scroll",
+            "arguments": {
+              "direction": "left",
+              "amount": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma",
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.tab_close",
+      "status": "typed_seed",
+      "slots": {
+        "target": "tab"
+      },
+      "examples": [
+        {
+          "text": "Close this tab",
+          "parsed": {
+            "intent": "browser.tab_close",
+            "arguments": {
+              "target": "current_tab"
+            }
+          }
+        },
+        {
+          "text": "Close all browser tabs",
+          "parsed": {
+            "intent": "browser.tab_close",
+            "arguments": {
+              "target": "all_browser_tabs"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.tab_new",
+      "status": "typed_seed",
+      "slots": {
+        "url": "optional_string"
+      },
+      "examples": [
+        {
+          "text": "Open a new GitHub tab",
+          "parsed": {
+            "intent": "browser.tab_new",
+            "arguments": {
+              "url": "github"
+            }
+          }
+        },
+        {
+          "text": "Create a new tab",
+          "parsed": {
+            "intent": "browser.tab_new",
+            "arguments": {
+              "url": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omarvis",
+        "skipper"
+      ]
+    },
+    {
+      "id": "browser.tab_switch",
+      "status": "typed_seed",
+      "slots": {
+        "target": "tab"
+      },
+      "examples": [
+        {
+          "text": "Switch to tab two",
+          "parsed": {
+            "intent": "browser.tab_switch",
+            "arguments": {
+              "target": "tab_2"
+            }
+          }
+        },
+        {
+          "text": "Go to the GitHub tab",
+          "parsed": {
+            "intent": "browser.tab_switch",
+            "arguments": {
+              "target": "github_tab"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "clipboard.read",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "What is on my clipboard?",
+          "parsed": {
+            "intent": "clipboard.read",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Read the clipboard",
+          "parsed": {
+            "intent": "clipboard.read",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "clipboard.write",
+      "status": "typed_seed",
+      "slots": {
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Copy hello to the clipboard",
+          "parsed": {
+            "intent": "clipboard.write",
+            "arguments": {
+              "text": "hello"
+            }
+          }
+        },
+        {
+          "text": "Put this text on my clipboard",
+          "parsed": {
+            "intent": "clipboard.write",
+            "arguments": {
+              "text": "this text"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "display.brightness_down",
+      "status": "typed_seed",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Decrease brightness",
+          "parsed": {
+            "intent": "display.brightness_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Dim the screen",
+          "parsed": {
+            "intent": "display.brightness_down",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "display.brightness_up",
+      "status": "typed_seed",
+      "slots": {
+        "amount": "optional_number"
+      },
+      "examples": [
+        {
+          "text": "Increase brightness",
+          "parsed": {
+            "intent": "display.brightness_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        },
+        {
+          "text": "Make the screen brighter",
+          "parsed": {
+            "intent": "display.brightness_up",
+            "arguments": {
+              "amount": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "media.next",
+      "status": "typed_seed",
+      "slots": {
+        "direction": "next"
+      },
+      "examples": [
+        {
+          "text": "Next track",
+          "parsed": {
+            "intent": "media.next",
+            "arguments": {
+              "direction": "next"
+            }
+          }
+        },
+        {
+          "text": "Skip this song",
+          "parsed": {
+            "intent": "media.next",
+            "arguments": {
+              "direction": "next"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "media.pause",
+      "status": "typed_seed",
+      "slots": {
+        "state": "pause"
+      },
+      "examples": [
+        {
+          "text": "Pause music",
+          "parsed": {
+            "intent": "media.pause",
+            "arguments": {
+              "state": "pause"
+            }
+          }
+        },
+        {
+          "text": "Stop playback",
+          "parsed": {
+            "intent": "media.pause",
+            "arguments": {
+              "state": "pause"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "skipper"
+      ]
+    },
+    {
+      "id": "media.play",
+      "status": "typed_seed",
+      "slots": {
+        "state": "play"
+      },
+      "examples": [
+        {
+          "text": "Play music",
+          "parsed": {
+            "intent": "media.play",
+            "arguments": {
+              "state": "play"
+            }
+          }
+        },
+        {
+          "text": "Resume playback",
+          "parsed": {
+            "intent": "media.play",
+            "arguments": {
+              "state": "play"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "skipper"
+      ]
+    },
+    {
+      "id": "media.previous",
+      "status": "typed_seed",
+      "slots": {
+        "direction": "previous"
+      },
+      "examples": [
+        {
+          "text": "Previous track",
+          "parsed": {
+            "intent": "media.previous",
+            "arguments": {
+              "direction": "previous"
+            }
+          }
+        },
+        {
+          "text": "Go back a track",
+          "parsed": {
+            "intent": "media.previous",
+            "arguments": {
+              "direction": "previous"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "notes.remember",
+      "status": "typed_seed",
+      "slots": {
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Remember that the server is on port 8080",
+          "parsed": {
+            "intent": "notes.remember",
+            "arguments": {
+              "text": "the server is on port 8080"
+            }
+          }
+        },
+        {
+          "text": "Save this note",
+          "parsed": {
+            "intent": "notes.remember",
+            "arguments": {
+              "text": "this note"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "reminder.create",
+      "status": "typed_seed",
+      "slots": {
+        "message": "string",
+        "delay": "optional_duration"
+      },
+      "examples": [
+        {
+          "text": "Remind me in ten minutes to stretch",
+          "parsed": {
+            "intent": "reminder.create",
+            "arguments": {
+              "message": "stretch",
+              "delay": "PT10M"
+            }
+          }
+        },
+        {
+          "text": "Set a reminder to call Alex",
+          "parsed": {
+            "intent": "reminder.create",
+            "arguments": {
+              "message": "call Alex",
+              "delay": null
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "screen.read",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "What is on my screen?",
+          "parsed": {
+            "intent": "screen.read",
+            "arguments": {
+              "target": "screen"
+            }
+          }
+        },
+        {
+          "text": "Read the visible window",
+          "parsed": {
+            "intent": "screen.read",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "smarthome.device_set",
+      "status": "typed_seed",
+      "slots": {
+        "device": "string",
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Turn off the living room lights",
+          "parsed": {
+            "intent": "smarthome.device_set",
+            "arguments": {
+              "device": "living_room_lights",
+              "state": "off"
+            }
+          }
+        },
+        {
+          "text": "Switch on the fan",
+          "parsed": {
+            "intent": "smarthome.device_set",
+            "arguments": {
+              "device": "fan",
+              "state": "on"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "speech.say",
+      "status": "typed_seed",
+      "slots": {
+        "text": "string"
+      },
+      "examples": [
+        {
+          "text": "Say hello",
+          "parsed": {
+            "intent": "speech.say",
+            "arguments": {
+              "text": "hello"
+            }
+          }
+        },
+        {
+          "text": "Speak the current time",
+          "parsed": {
+            "intent": "speech.say",
+            "arguments": {
+              "text": "the current time"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omayap"
+      ]
+    },
+    {
+      "id": "system.battery_query",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "How much battery is left?",
+          "parsed": {
+            "intent": "system.battery_query",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Tell me the battery level",
+          "parsed": {
+            "intent": "system.battery_query",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "system.lock",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Lock the screen",
+          "parsed": {
+            "intent": "system.lock",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Lock my computer",
+          "parsed": {
+            "intent": "system.lock",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.power_profile_set",
+      "status": "typed_seed",
+      "slots": {
+        "profile": "enum"
+      },
+      "examples": [
+        {
+          "text": "Set power mode to performance",
+          "parsed": {
+            "intent": "system.power_profile_set",
+            "arguments": {
+              "profile": "performance"
+            }
+          }
+        },
+        {
+          "text": "Use power saver",
+          "parsed": {
+            "intent": "system.power_profile_set",
+            "arguments": {
+              "profile": "power_saver"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omause"
+      ]
+    },
+    {
+      "id": "system.reboot",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Restart the computer",
+          "parsed": {
+            "intent": "system.reboot",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Reboot the machine",
+          "parsed": {
+            "intent": "system.reboot",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.screenshot",
+      "status": "typed_seed",
+      "slots": {
+        "target": "enum"
+      },
+      "examples": [
+        {
+          "text": "Take a screenshot",
+          "parsed": {
+            "intent": "system.screenshot",
+            "arguments": {
+              "target": "screen"
+            }
+          }
+        },
+        {
+          "text": "Capture the screen",
+          "parsed": {
+            "intent": "system.screenshot",
+            "arguments": {
+              "target": "screen"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omarvis"
+      ]
+    },
+    {
+      "id": "system.shutdown",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Shut down the computer",
+          "parsed": {
+            "intent": "system.shutdown",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Power off this machine",
+          "parsed": {
+            "intent": "system.shutdown",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.suspend",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "Put the computer to sleep",
+          "parsed": {
+            "intent": "system.suspend",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Suspend the system",
+          "parsed": {
+            "intent": "system.suspend",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.theme_set",
+      "status": "typed_seed",
+      "slots": {
+        "theme": "string"
+      },
+      "examples": [
+        {
+          "text": "Switch theme to Tokyo Night",
+          "parsed": {
+            "intent": "system.theme_set",
+            "arguments": {
+              "theme": "tokyo_night"
+            }
+          }
+        },
+        {
+          "text": "Apply the light theme",
+          "parsed": {
+            "intent": "system.theme_set",
+            "arguments": {
+              "theme": "light"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.time_query",
+      "status": "typed_seed",
+      "slots": {},
+      "examples": [
+        {
+          "text": "What time is it?",
+          "parsed": {
+            "intent": "system.time_query",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "Tell me the time",
+          "parsed": {
+            "intent": "system.time_query",
+            "arguments": {}
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "task.status",
+      "status": "typed_seed",
+      "slots": {
+        "task_id": "string"
+      },
+      "examples": [
+        {
+          "text": "How is the coding task going?",
+          "parsed": {
+            "intent": "task.status",
+            "arguments": {
+              "task_id": "current_coding_task"
+            }
+          }
+        },
+        {
+          "text": "Check the agent status",
+          "parsed": {
+            "intent": "task.status",
+            "arguments": {
+              "task_id": "current_agent"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "task.submit",
+      "status": "typed_seed",
+      "slots": {
+        "goal": "string"
+      },
+      "examples": [
+        {
+          "text": "Start a coding task to fix the tests",
+          "parsed": {
+            "intent": "task.submit",
+            "arguments": {
+              "goal": "fix the tests"
+            }
+          }
+        },
+        {
+          "text": "Analyze this repository in the background",
+          "parsed": {
+            "intent": "task.submit",
+            "arguments": {
+              "goal": "analyze this repository"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "terminal.read",
+      "status": "typed_seed",
+      "slots": {
+        "target": "terminal"
+      },
+      "examples": [
+        {
+          "text": "Read the terminal output",
+          "parsed": {
+            "intent": "terminal.read",
+            "arguments": {
+              "target": "terminal"
+            }
+          }
+        },
+        {
+          "text": "What does the build say?",
+          "parsed": {
+            "intent": "terminal.read",
+            "arguments": {
+              "target": "build_terminal"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "terminal.run",
+      "status": "typed_seed",
+      "slots": {
+        "target": "terminal",
+        "command": "string"
+      },
+      "examples": [
+        {
+          "text": "Run the tests in this terminal",
+          "parsed": {
+            "intent": "terminal.run",
+            "arguments": {
+              "target": "current_terminal",
+              "command": "run the tests"
+            }
+          }
+        },
+        {
+          "text": "Execute make build",
+          "parsed": {
+            "intent": "terminal.run",
+            "arguments": {
+              "target": "current_terminal",
+              "command": "make build"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "terminal.watch",
+      "status": "typed_seed",
+      "slots": {
+        "target": "terminal"
+      },
+      "examples": [
+        {
+          "text": "Tell me when the build finishes",
+          "parsed": {
+            "intent": "terminal.watch",
+            "arguments": {
+              "target": "build_terminal"
+            }
+          }
+        },
+        {
+          "text": "Notify me when this terminal is idle",
+          "parsed": {
+            "intent": "terminal.watch",
+            "arguments": {
+              "target": "current_terminal"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "tv.power_set",
+      "status": "typed_seed",
+      "slots": {
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Turn on the TV",
+          "parsed": {
+            "intent": "tv.power_set",
+            "arguments": {
+              "state": "on"
+            }
+          }
+        },
+        {
+          "text": "Switch off the television",
+          "parsed": {
+            "intent": "tv.power_set",
+            "arguments": {
+              "state": "off"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "window.close",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Close this window",
+          "parsed": {
+            "intent": "window.close",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        },
+        {
+          "text": "Close the terminal",
+          "parsed": {
+            "intent": "window.close",
+            "arguments": {
+              "target": "terminal"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omause",
+        "skipper"
+      ]
+    },
+    {
+      "id": "window.float",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window",
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Float this window",
+          "parsed": {
+            "intent": "window.float",
+            "arguments": {
+              "target": "current_window",
+              "state": "on"
+            }
+          }
+        },
+        {
+          "text": "Make the active window tiled",
+          "parsed": {
+            "intent": "window.float",
+            "arguments": {
+              "target": "current_window",
+              "state": "off"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "window.focus",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Focus the terminal",
+          "parsed": {
+            "intent": "window.focus",
+            "arguments": {
+              "target": "terminal"
+            }
+          }
+        },
+        {
+          "text": "Switch to the GitHub window",
+          "parsed": {
+            "intent": "window.focus",
+            "arguments": {
+              "target": "github_window"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "oma",
+        "omause"
+      ]
+    },
+    {
+      "id": "window.fullscreen",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window",
+        "state": "enum"
+      },
+      "examples": [
+        {
+          "text": "Make this window fullscreen",
+          "parsed": {
+            "intent": "window.fullscreen",
+            "arguments": {
+              "target": "current_window",
+              "state": "on"
+            }
+          }
+        },
+        {
+          "text": "Exit fullscreen",
+          "parsed": {
+            "intent": "window.fullscreen",
+            "arguments": {
+              "target": "current_window",
+              "state": "off"
+            }
+          }
+        }
+      ],
+      "mapped_projects": []
+    },
+    {
+      "id": "window.hide",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Hide this window",
+          "parsed": {
+            "intent": "window.hide",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        },
+        {
+          "text": "Hide all terminals",
+          "parsed": {
+            "intent": "window.hide",
+            "arguments": {
+              "target": "all_terminals"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "window.list",
+      "status": "typed_seed",
+      "slots": {
+        "scope": "enum"
+      },
+      "examples": [
+        {
+          "text": "List open windows",
+          "parsed": {
+            "intent": "window.list",
+            "arguments": {
+              "scope": "open_windows"
+            }
+          }
+        },
+        {
+          "text": "What windows are open?",
+          "parsed": {
+            "intent": "window.list",
+            "arguments": {
+              "scope": "open_windows"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omapilot",
+        "skipper"
+      ]
+    },
+    {
+      "id": "window.maximize",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window"
+      },
+      "examples": [
+        {
+          "text": "Maximize this window",
+          "parsed": {
+            "intent": "window.maximize",
+            "arguments": {
+              "target": "current_window"
+            }
+          }
+        },
+        {
+          "text": "Maximize Firefox",
+          "parsed": {
+            "intent": "window.maximize",
+            "arguments": {
+              "target": "firefox"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "window.move_monitor",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window",
+        "monitor": "monitor"
+      },
+      "examples": [
+        {
+          "text": "Move this window to the other screen",
+          "parsed": {
+            "intent": "window.move_monitor",
+            "arguments": {
+              "target": "current_window",
+              "monitor": "other"
+            }
+          }
+        },
+        {
+          "text": "Put Discord on the other monitor",
+          "parsed": {
+            "intent": "window.move_monitor",
+            "arguments": {
+              "target": "discord",
+              "monitor": "other"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "window.tile",
+      "status": "typed_seed",
+      "slots": {
+        "scope": "enum"
+      },
+      "examples": [
+        {
+          "text": "Tile open windows",
+          "parsed": {
+            "intent": "window.tile",
+            "arguments": {
+              "scope": "open_windows"
+            }
+          }
+        },
+        {
+          "text": "Tile the terminals",
+          "parsed": {
+            "intent": "window.tile",
+            "arguments": {
+              "scope": "terminals"
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "workspace.move_window",
+      "status": "typed_seed",
+      "slots": {
+        "target": "window",
+        "workspace": "integer"
+      },
+      "examples": [
+        {
+          "text": "Move this window to workspace 3",
+          "parsed": {
+            "intent": "workspace.move_window",
+            "arguments": {
+              "target": "current_window",
+              "workspace": 3
+            }
+          }
+        },
+        {
+          "text": "Send Firefox to workspace 2",
+          "parsed": {
+            "intent": "workspace.move_window",
+            "arguments": {
+              "target": "firefox",
+              "workspace": 2
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "workspace.switch",
+      "status": "typed_seed",
+      "slots": {
+        "workspace": "integer"
+      },
+      "examples": [
+        {
+          "text": "Go to workspace 2",
+          "parsed": {
+            "intent": "workspace.switch",
+            "arguments": {
+              "workspace": 2
+            }
+          }
+        },
+        {
+          "text": "Switch to workspace 4",
+          "parsed": {
+            "intent": "workspace.switch",
+            "arguments": {
+              "workspace": 4
+            }
+          }
+        }
+      ],
+      "mapped_projects": [
+        "genesis",
+        "omause"
+      ]
+    },
+    {
+      "id": "agent.request",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis",
+        "omause"
+      ]
+    },
+    {
+      "id": "app.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "audio.mute_toggle",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "audio.volume_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "browser.close",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.download",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.drag",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.element_focus",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.element_hover",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.form_check",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.form_select",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.handoff",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "browser.open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "browser.page_forward",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.page_reload",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.tab_list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.tabs_clear",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "browser.upload",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "browser.wait",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "calendar.events",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "calendar.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "calendar.todo_create",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "calendar.todo_list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "camera.inspect",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "clipboard.manage",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "coding.agent.explain",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.focus",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.get",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.prompt",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.read",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.rename",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.send_keys",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.agent.start",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.api.snapshot",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.notification.show",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.close",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.current",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.edges",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.focus",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.get",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.input",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.layout",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.move",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.neighbor",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.process_info",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.read",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.rename",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.resize",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.run",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.send_keys",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.send_text",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.split",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.swap",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.pane.zoom",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.server.reload_config",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.server.stop",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.session.delete",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.session.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.session.stop",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.status",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.tab.close",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.tab.create",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.tab.focus",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.tab.get",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.tab.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.tab.rename",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.workspace.close",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.workspace.create",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.workspace.focus",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.workspace.get",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.workspace.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.workspace.rename",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.worktree.create",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.worktree.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.worktree.open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "coding.worktree.remove",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarvis"
+      ]
+    },
+    {
+      "id": "dictation.cancel",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarchy-stt",
+        "voice-input",
+        "voxtype"
+      ]
+    },
+    {
+      "id": "dictation.capture",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarchy-stt"
+      ]
+    },
+    {
+      "id": "dictation.chat",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarchy-stt"
+      ]
+    },
+    {
+      "id": "dictation.history",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voice-input"
+      ]
+    },
+    {
+      "id": "dictation.history_paste",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voice-input"
+      ]
+    },
+    {
+      "id": "dictation.output_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype-enhance"
+      ]
+    },
+    {
+      "id": "dictation.paste_keys_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype-enhance"
+      ]
+    },
+    {
+      "id": "dictation.restart",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voice-input"
+      ]
+    },
+    {
+      "id": "dictation.start",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voice-input",
+        "voxtype"
+      ]
+    },
+    {
+      "id": "dictation.status",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voice-input",
+        "voxtype",
+        "voxtype-enhance"
+      ]
+    },
+    {
+      "id": "dictation.stop",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "handy",
+        "voice-input",
+        "voxtype"
+      ]
+    },
+    {
+      "id": "dictation.submit",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omarchy-stt"
+      ]
+    },
+    {
+      "id": "dictation.toggle",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "handy",
+        "voice-input",
+        "voxtype"
+      ]
+    },
+    {
+      "id": "display.brightness_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "email.read",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "email.reply",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "email.search",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "email.send",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "extension.failure_report",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "extension.ipc_call",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "extension.script_run",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "file.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "file.open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "file.read",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "file.search",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "input.keypress",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma",
+        "omarvis"
+      ]
+    },
+    {
+      "id": "input.type_text",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma",
+        "omause"
+      ]
+    },
+    {
+      "id": "media.play_pause",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "meeting.delete",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.export",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.join",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "meeting.label",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.pause",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.resume",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.show",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.start",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.status",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.stop",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "meeting.summarize",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype"
+      ]
+    },
+    {
+      "id": "message.send",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "network.connect_open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "network.connect_saved",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "network.disconnect",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "network.wifi_disable",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "network.wifi_enable",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "project.comment",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "project.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "project.search",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "project.todo_create",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "project.todo_list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "routine.schedule",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "screen.click_text",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "smarthome.device_toggle",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "smarthome.scene_activate",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "speech.backend_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "speech.correction_save",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "speech.engine_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype-enhance"
+      ]
+    },
+    {
+      "id": "speech.language_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype-enhance"
+      ]
+    },
+    {
+      "id": "speech.model_install",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voxtype-enhance"
+      ]
+    },
+    {
+      "id": "speech.read_screen",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "speech.read_selection",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "speech.route",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "speech.speed_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "speech.stop",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "speech.transcribe_file",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "voice-input",
+        "voxtype"
+      ]
+    },
+    {
+      "id": "speech.vocabulary_query",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "speech.voice_install",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "speech.voice_select",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omayap"
+      ]
+    },
+    {
+      "id": "system.idle_set",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.idle_toggle",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "system.logout",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "system.menu_open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "system.nightlight_toggle",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis",
+        "omause"
+      ]
+    },
+    {
+      "id": "system.notifications_silence_toggle",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "system.panel_open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omause"
+      ]
+    },
+    {
+      "id": "system.status_query",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis",
+        "oma",
+        "omause"
+      ]
+    },
+    {
+      "id": "system.wait",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma",
+        "omause"
+      ]
+    },
+    {
+      "id": "task.cancel",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "task.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "task.read",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "task.resume",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "terminal.list",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "terminal.open",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "tv.remote_action",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "genesis"
+      ]
+    },
+    {
+      "id": "web.search",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "window.compose",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "oma"
+      ]
+    },
+    {
+      "id": "window.manage",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    },
+    {
+      "id": "window.tile_pair",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "skipper"
+      ]
+    },
+    {
+      "id": "workspace.manage",
+      "status": "needs_schema_review",
+      "slots": null,
+      "examples": [],
+      "mapped_projects": [
+        "omapilot"
+      ]
+    }
+  ]
+}

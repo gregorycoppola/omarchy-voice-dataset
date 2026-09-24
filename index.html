@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omarchy voice intents · working inventory</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.45 system-ui, sans-serif; }
+  body { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { margin-bottom: .35rem; } p { max-width: 85ch; }
+  .controls { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }
+  input, select { font: inherit; padding: .45rem; min-width: 13rem; }
+  .scroll { overflow-x: auto; } table { border-collapse: collapse; width: 100%; min-width: 900px; }
+  th, td { text-align: left; vertical-align: top; padding: .65rem; border-bottom: 1px solid #8886; }
+  th { position: sticky; top: 0; background: Canvas; }
+  code { font-size: .9em; } small { display: block; opacity: .75; }
+  .explicit { color: #178148; } .tool { color: #a56800; }
+  .extension { color: #7961aa; } .unknown { opacity: .55; }
+  a { color: LinkText; } .count { margin: .5rem 0; }
+</style>
+<h1>Omarchy voice intents</h1>
+<p>The first 55 typed outcome intents from four command systems. See the <a href="outcomes.html">candidate outcome set across twelve projects</a> and <a href="surfaces.html">declared source surfaces</a>. Example phrases are proposed test cases, not verified utterances for every project. “Tool” means a capability exists without an established phrase-level result. Read the <a href="README.md">method and scope</a> before comparing coverage.</p>
+<div class="controls">
+  <label>Find an intent <input id="query" type="search" placeholder="window, browser, media…"></label>
+  <label>Support in <select id="project"><option value="">Any project</option><option value="skipper">Skipper</option><option value="genesis">Genesis</option><option value="omarvis">Omarvis</option><option value="oma">OMA</option></select></label>
+  <label>Status <select id="status"><option value="">Any status</option><option value="explicit">Explicit</option><option value="tool">Tool</option><option value="extension">Extension</option><option value="unknown">Unknown</option></select></label>
+</div>
+<p id="count" class="count" role="status"></p>
+<div class="scroll"><table><thead><tr><th>Canonical intent</th><th>Slots</th><th>Proposed phrases</th><th>Skipper</th><th>Genesis</th><th>Omarvis</th><th>OMA</th></tr></thead><tbody id="rows"></tbody></table></div>
+<script>
+const projects = ['skipper', 'genesis', 'omarvis', 'oma'];
+const query = document.getElementById('query');
+const project = document.getElementById('project');
+const status = document.getElementById('status');
+const rows = document.getElementById('rows');
+const count = document.getElementById('count');
+function cell(tr, content) { const td = document.createElement('td'); td.append(content); tr.append(td); return td; }
+fetch('data/history/2026-09-24/intents.json').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(data => {
+  function render() {
+    rows.replaceChildren(); let shown = 0;
+    for (const item of data.intents) {
+      const text = [item.id, ...item.examples.map(x => x.text), ...Object.keys(item.slots)].join(' ').toLowerCase();
+      if (!text.includes(query.value.trim().toLowerCase())) continue;
+      if (project.value && !status.value && item.support[project.value].status === 'unknown') continue;
+      if (project.value && status.value && item.support[project.value].status !== status.value) continue;
+      if (!project.value && status.value && !projects.some(p => item.support[p].status === status.value)) continue;
+      const tr = document.createElement('tr');
+      const id = document.createElement('code'); id.textContent = item.id; cell(tr, id);
+      const slots = Object.entries(item.slots).map(([k,v]) => `${k}: ${v}`).join(', ');
+      cell(tr, slots || '—');
+      const examples = cell(tr, '');
+      for (const example of item.examples) {
+        const detail = document.createElement('details');
+        const summary = document.createElement('summary'); summary.textContent = example.text;
+        const parsed = document.createElement('code'); parsed.textContent = JSON.stringify(example.parsed);
+        detail.append(summary, parsed); examples.append(detail);
+      }
+      for (const p of projects) {
+        const s = item.support[p], td = cell(tr, '');
+        const label = document.createElement(s.evidence ? 'a' : 'span');
+        label.textContent = s.status; label.className = s.status;
+        if (s.evidence) label.href = s.evidence;
+        td.append(label);
+      }
+      rows.append(tr); shown++;
+    }
+    count.textContent = `${shown} of ${data.intents.length} intents shown`;
+  }
+  [query, project, status].forEach(el => el.addEventListener('input', render)); render();
+}).catch(e => { count.textContent = `Could not load data/intents.json (${e}). Serve this directory with a local HTTP server.`; });
+</script>
+</html>

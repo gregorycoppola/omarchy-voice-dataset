@@ -1,0 +1,3329 @@
+{
+  "schema_version": 1,
+  "status": "candidate_mapping_not_voice_validation",
+  "seed_typed_intents": 55,
+  "additional_candidates_needing_schema": [
+    "agent.request",
+    "app.list",
+    "audio.mute_toggle",
+    "audio.volume_set",
+    "browser.close",
+    "browser.download",
+    "browser.drag",
+    "browser.element_focus",
+    "browser.element_hover",
+    "browser.form_check",
+    "browser.form_select",
+    "browser.handoff",
+    "browser.open",
+    "browser.page_forward",
+    "browser.page_reload",
+    "browser.tab_list",
+    "browser.tabs_clear",
+    "browser.upload",
+    "browser.wait",
+    "calendar.events",
+    "calendar.list",
+    "calendar.todo_create",
+    "calendar.todo_list",
+    "camera.inspect",
+    "clipboard.manage",
+    "coding.agent.explain",
+    "coding.agent.focus",
+    "coding.agent.get",
+    "coding.agent.list",
+    "coding.agent.prompt",
+    "coding.agent.read",
+    "coding.agent.rename",
+    "coding.agent.send_keys",
+    "coding.agent.start",
+    "coding.api.snapshot",
+    "coding.notification.show",
+    "coding.pane.close",
+    "coding.pane.current",
+    "coding.pane.edges",
+    "coding.pane.focus",
+    "coding.pane.get",
+    "coding.pane.input",
+    "coding.pane.layout",
+    "coding.pane.list",
+    "coding.pane.move",
+    "coding.pane.neighbor",
+    "coding.pane.process_info",
+    "coding.pane.read",
+    "coding.pane.rename",
+    "coding.pane.resize",
+    "coding.pane.run",
+    "coding.pane.send_keys",
+    "coding.pane.send_text",
+    "coding.pane.split",
+    "coding.pane.swap",
+    "coding.pane.zoom",
+    "coding.server.reload_config",
+    "coding.server.stop",
+    "coding.session.delete",
+    "coding.session.list",
+    "coding.session.stop",
+    "coding.status",
+    "coding.tab.close",
+    "coding.tab.create",
+    "coding.tab.focus",
+    "coding.tab.get",
+    "coding.tab.list",
+    "coding.tab.rename",
+    "coding.workspace.close",
+    "coding.workspace.create",
+    "coding.workspace.focus",
+    "coding.workspace.get",
+    "coding.workspace.list",
+    "coding.workspace.rename",
+    "coding.worktree.create",
+    "coding.worktree.list",
+    "coding.worktree.open",
+    "coding.worktree.remove",
+    "dictation.cancel",
+    "dictation.capture",
+    "dictation.chat",
+    "dictation.history",
+    "dictation.history_paste",
+    "dictation.output_set",
+    "dictation.paste_keys_set",
+    "dictation.restart",
+    "dictation.start",
+    "dictation.status",
+    "dictation.stop",
+    "dictation.submit",
+    "dictation.toggle",
+    "display.brightness_set",
+    "email.read",
+    "email.reply",
+    "email.search",
+    "email.send",
+    "extension.failure_report",
+    "extension.ipc_call",
+    "extension.script_run",
+    "file.list",
+    "file.open",
+    "file.read",
+    "file.search",
+    "input.keypress",
+    "input.type_text",
+    "media.play_pause",
+    "meeting.delete",
+    "meeting.export",
+    "meeting.join",
+    "meeting.label",
+    "meeting.list",
+    "meeting.pause",
+    "meeting.resume",
+    "meeting.show",
+    "meeting.start",
+    "meeting.status",
+    "meeting.stop",
+    "meeting.summarize",
+    "message.send",
+    "network.connect_open",
+    "network.connect_saved",
+    "network.disconnect",
+    "network.wifi_disable",
+    "network.wifi_enable",
+    "project.comment",
+    "project.list",
+    "project.search",
+    "project.todo_create",
+    "project.todo_list",
+    "routine.schedule",
+    "screen.click_text",
+    "smarthome.device_toggle",
+    "smarthome.scene_activate",
+    "speech.backend_set",
+    "speech.correction_save",
+    "speech.engine_set",
+    "speech.language_set",
+    "speech.model_install",
+    "speech.read_screen",
+    "speech.read_selection",
+    "speech.route",
+    "speech.speed_set",
+    "speech.stop",
+    "speech.transcribe_file",
+    "speech.vocabulary_query",
+    "speech.voice_install",
+    "speech.voice_select",
+    "system.idle_set",
+    "system.idle_toggle",
+    "system.logout",
+    "system.menu_open",
+    "system.nightlight_toggle",
+    "system.notifications_silence_toggle",
+    "system.panel_open",
+    "system.status_query",
+    "system.wait",
+    "task.cancel",
+    "task.list",
+    "task.read",
+    "task.resume",
+    "terminal.list",
+    "terminal.open",
+    "tv.remote_action",
+    "web.search",
+    "window.compose",
+    "window.manage",
+    "window.tile_pair",
+    "workspace.manage"
+  ],
+  "crosswalk": [
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "open_destination",
+      "candidate_intent": "browser.navigate",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "close_browser_tabs",
+      "candidate_intent": "browser.tabs_clear",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "list_windows",
+      "candidate_intent": "window.list",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "open_another_destination",
+      "candidate_intent": "browser.tab_new",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "open_browser",
+      "candidate_intent": "browser.open",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "present_browser",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "open_browser_and_tile",
+      "candidate_intent": null,
+      "relationship": "proposed_composite",
+      "source": "../private/command_catalog.py",
+      "component_intents": [
+        "browser.open",
+        "window.tile_pair"
+      ]
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "open_browser_fullscreen",
+      "candidate_intent": "browser.open",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "open_app",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "close_app",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "move_app",
+      "candidate_intent": "window.move_monitor",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "maximize_app",
+      "candidate_intent": "window.maximize",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "create_terminal",
+      "candidate_intent": "terminal.open",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "close_terminal",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "close_current_terminal",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "maximize_current_window",
+      "candidate_intent": "window.maximize",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "move_window",
+      "candidate_intent": "window.move_monitor",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "show_windows",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "tile_current_window_with_browser",
+      "candidate_intent": "window.tile_pair",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "tile_windows",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "tile_terminals",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "tile_browsers",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "hide_terminals",
+      "candidate_intent": "window.hide",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "hide_apps",
+      "candidate_intent": "window.hide",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "hide_current_window",
+      "candidate_intent": "window.hide",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "tile_apps",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "volume_up",
+      "candidate_intent": "audio.volume_up",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "volume_down",
+      "candidate_intent": "audio.volume_down",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "volume_mute",
+      "candidate_intent": "audio.mute",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "volume_unmute",
+      "candidate_intent": "audio.unmute",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "brightness_up",
+      "candidate_intent": "display.brightness_up",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "brightness_down",
+      "candidate_intent": "display.brightness_down",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "media_play",
+      "candidate_intent": "media.play",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "media_pause",
+      "candidate_intent": "media.pause",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "media_next",
+      "candidate_intent": "media.next",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "grammar_rule",
+      "source_name": "media_previous",
+      "candidate_intent": "media.previous",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "apps:hide",
+      "candidate_intent": "window.hide",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "apps:tile",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "brightness:down",
+      "candidate_intent": "display.brightness_down",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "brightness:up",
+      "candidate_intent": "display.brightness_up",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "browser",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "browser:close_tabs",
+      "candidate_intent": "browser.tabs_clear",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "browser:open_fullscreen",
+      "candidate_intent": "browser.open",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "browser:open_tile",
+      "candidate_intent": null,
+      "relationship": "proposed_composite",
+      "source": "../private/command_catalog.py",
+      "component_intents": [
+        "browser.open",
+        "window.tile_pair"
+      ]
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "browser_fullscreen",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "browsers:tile",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:browser",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:discord",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:files",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:tensaku",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:terminal",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:terminal_current",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "close:x",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "discord",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "maximize:browser",
+      "candidate_intent": "window.maximize",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "maximize:current_window",
+      "candidate_intent": "window.maximize",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "maximize:discord",
+      "candidate_intent": "window.maximize",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "maximize:x",
+      "candidate_intent": "window.maximize",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "media:next",
+      "candidate_intent": "media.next",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "media:pause",
+      "candidate_intent": "media.pause",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "media:play",
+      "candidate_intent": "media.play",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "media:previous",
+      "candidate_intent": "media.previous",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "move-app:browser",
+      "candidate_intent": "window.move_monitor",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "move-app:discord",
+      "candidate_intent": "window.move_monitor",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "move-app:x",
+      "candidate_intent": "window.move_monitor",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "move:other_screen",
+      "candidate_intent": "window.move_monitor",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "site-new:github",
+      "candidate_intent": "browser.tab_new",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "site-new:gmail",
+      "candidate_intent": "browser.tab_new",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "site:github",
+      "candidate_intent": "browser.navigate",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "site:gmail",
+      "candidate_intent": "browser.navigate",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "terminal:new",
+      "candidate_intent": "terminal.open",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "terminals:hide",
+      "candidate_intent": "window.hide",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "terminals:tile",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "volume:down",
+      "candidate_intent": "audio.volume_down",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "volume:mute",
+      "candidate_intent": "audio.mute",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "volume:unmute",
+      "candidate_intent": "audio.unmute",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "volume:up",
+      "candidate_intent": "audio.volume_up",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "window:hide",
+      "candidate_intent": "window.hide",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "windows",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "windows:list",
+      "candidate_intent": "window.list",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "windows:tile",
+      "candidate_intent": "window.tile",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "windows:tile_current_browser",
+      "candidate_intent": "window.tile_pair",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "windows:tile_pair",
+      "candidate_intent": "window.tile_pair",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "skipper",
+      "source_kind": "execution_id",
+      "source_name": "x",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../private/command_catalog.py"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "shutdown",
+      "candidate_intent": "system.shutdown",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "reboot",
+      "candidate_intent": "system.reboot",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "logout",
+      "candidate_intent": "system.logout",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "lock",
+      "candidate_intent": "system.lock",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "suspend",
+      "candidate_intent": "system.suspend",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "screenshot",
+      "candidate_intent": "system.screenshot",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "volume-up",
+      "candidate_intent": "audio.volume_up",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "volume-down",
+      "candidate_intent": "audio.volume_down",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "mute",
+      "candidate_intent": "audio.mute_toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "media-play",
+      "candidate_intent": "media.play",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "media-pause",
+      "candidate_intent": "media.pause",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "media-next",
+      "candidate_intent": "media.next",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "media-previous",
+      "candidate_intent": "media.previous",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "brightness-up",
+      "candidate_intent": "display.brightness_up",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "brightness-down",
+      "candidate_intent": "display.brightness_down",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "speak",
+      "candidate_intent": "speech.say",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "nightlight",
+      "candidate_intent": "system.nightlight_toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "idle",
+      "candidate_intent": "system.idle_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "power-profile",
+      "candidate_intent": "system.power_profile_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "workspace",
+      "candidate_intent": "workspace.switch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "theme",
+      "candidate_intent": "system.theme_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "status",
+      "candidate_intent": "system.status_query",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "ha-toggle",
+      "candidate_intent": "smarthome.device_toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "ha-scene",
+      "candidate_intent": "smarthome.scene_activate",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "tv",
+      "candidate_intent": "tv.remote_action",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "ipc",
+      "candidate_intent": "extension.ipc_call",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "run",
+      "candidate_intent": "extension.script_run",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "failed",
+      "candidate_intent": "extension.failure_report",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "open",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "reminder",
+      "candidate_intent": "reminder.create",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "executor_action",
+      "source_name": "agent",
+      "candidate_intent": "agent.request",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/execute"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "configurable_surface",
+      "source_name": "custom_plugin_command",
+      "candidate_intent": "extension.ipc_call",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/commands"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "configurable_surface",
+      "source_name": "custom_script_command",
+      "candidate_intent": "extension.script_run",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/commands"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "configurable_surface",
+      "source_name": "scheduled_routine",
+      "candidate_intent": "routine.schedule",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/routines"
+    },
+    {
+      "project": "genesis",
+      "source_kind": "configurable_surface",
+      "source_name": "agent_fallback",
+      "candidate_intent": "agent.request",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/genesis/bin/intent"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser back",
+      "candidate_intent": "browser.page_back",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser check <selector|@ref>",
+      "candidate_intent": "browser.form_check",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser click <selector|@ref>",
+      "candidate_intent": "browser.element_click",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser close [--all]",
+      "candidate_intent": "browser.close",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser dblclick <selector|@ref>",
+      "candidate_intent": "browser.element_click",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser download <selector|@ref> <path>",
+      "candidate_intent": "browser.download",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser drag <source> <target>",
+      "candidate_intent": "browser.drag",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser fill <selector|@ref> \"<text>\"",
+      "candidate_intent": "browser.form_fill",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser find text \"<visible label>\" click",
+      "candidate_intent": "browser.element_click",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser focus <selector|@ref>",
+      "candidate_intent": "browser.element_focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser forward",
+      "candidate_intent": "browser.page_forward",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser get <text|html|value|attr|title|url|count|box|styles> [selector]",
+      "candidate_intent": "browser.page_read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser hover <selector|@ref>",
+      "candidate_intent": "browser.element_hover",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser is <visible|enabled|checked> <selector>",
+      "candidate_intent": "browser.page_read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser keyboard type \"<text>\"",
+      "candidate_intent": "browser.form_fill",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser open <url>",
+      "candidate_intent": "browser.navigate",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser press <key>",
+      "candidate_intent": "input.keypress",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser reload",
+      "candidate_intent": "browser.page_reload",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser screenshot",
+      "candidate_intent": "system.screenshot",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser scroll <up|down|left|right> [pixels]",
+      "candidate_intent": "browser.page_scroll",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser scrollintoview <selector|@ref>",
+      "candidate_intent": "browser.page_scroll",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser select <selector|@ref> <value>",
+      "candidate_intent": "browser.form_select",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser snapshot [-i] [-c] [-d <depth>]",
+      "candidate_intent": "browser.page_read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser tab close [ref]",
+      "candidate_intent": "browser.tab_close",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser tab list",
+      "candidate_intent": "browser.tab_list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser tab new [url]",
+      "candidate_intent": "browser.tab_new",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser tab t2",
+      "candidate_intent": "browser.tab_switch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser type <selector|@ref> \"<text>\"",
+      "candidate_intent": "browser.form_fill",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser uncheck <selector|@ref>",
+      "candidate_intent": "browser.form_check",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser upload <selector|@ref> <path>",
+      "candidate_intent": "browser.upload",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "browser_route",
+      "source_name": "agent-browser wait <selector|milliseconds>",
+      "candidate_intent": "browser.wait",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent explain",
+      "candidate_intent": "coding.agent.explain",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent focus",
+      "candidate_intent": "coding.agent.focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent get",
+      "candidate_intent": "coding.agent.get",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent list",
+      "candidate_intent": "coding.agent.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent prompt",
+      "candidate_intent": "coding.agent.prompt",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent read",
+      "candidate_intent": "coding.agent.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent rename",
+      "candidate_intent": "coding.agent.rename",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent send-keys",
+      "candidate_intent": "coding.agent.send_keys",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr agent start",
+      "candidate_intent": "coding.agent.start",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr api snapshot",
+      "candidate_intent": "coding.api.snapshot",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr notification show",
+      "candidate_intent": "coding.notification.show",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane close",
+      "candidate_intent": "coding.pane.close",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane current",
+      "candidate_intent": "coding.pane.current",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane edges",
+      "candidate_intent": "coding.pane.edges",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane focus",
+      "candidate_intent": "coding.pane.focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane get",
+      "candidate_intent": "coding.pane.get",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane input",
+      "candidate_intent": "coding.pane.input",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane layout",
+      "candidate_intent": "coding.pane.layout",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane list",
+      "candidate_intent": "coding.pane.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane move",
+      "candidate_intent": "coding.pane.move",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane neighbor",
+      "candidate_intent": "coding.pane.neighbor",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane process-info",
+      "candidate_intent": "coding.pane.process_info",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane read",
+      "candidate_intent": "coding.pane.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane rename",
+      "candidate_intent": "coding.pane.rename",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane resize",
+      "candidate_intent": "coding.pane.resize",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane run",
+      "candidate_intent": "coding.pane.run",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane send-keys",
+      "candidate_intent": "coding.pane.send_keys",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane send-text",
+      "candidate_intent": "coding.pane.send_text",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane split",
+      "candidate_intent": "coding.pane.split",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane swap",
+      "candidate_intent": "coding.pane.swap",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr pane zoom",
+      "candidate_intent": "coding.pane.zoom",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr server reload-config",
+      "candidate_intent": "coding.server.reload_config",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr server stop",
+      "candidate_intent": "coding.server.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr session delete",
+      "candidate_intent": "coding.session.delete",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr session list",
+      "candidate_intent": "coding.session.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr session stop",
+      "candidate_intent": "coding.session.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr status",
+      "candidate_intent": "coding.status",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr tab close",
+      "candidate_intent": "coding.tab.close",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr tab create",
+      "candidate_intent": "coding.tab.create",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr tab focus",
+      "candidate_intent": "coding.tab.focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr tab get",
+      "candidate_intent": "coding.tab.get",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr tab list",
+      "candidate_intent": "coding.tab.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr tab rename",
+      "candidate_intent": "coding.tab.rename",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr workspace close",
+      "candidate_intent": "coding.workspace.close",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr workspace create",
+      "candidate_intent": "coding.workspace.create",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr workspace focus",
+      "candidate_intent": "coding.workspace.focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr workspace get",
+      "candidate_intent": "coding.workspace.get",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr workspace list",
+      "candidate_intent": "coding.workspace.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr workspace rename",
+      "candidate_intent": "coding.workspace.rename",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr worktree create",
+      "candidate_intent": "coding.worktree.create",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr worktree list",
+      "candidate_intent": "coding.worktree.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr worktree open",
+      "candidate_intent": "coding.worktree.open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "herdr_allowed_route",
+      "source_name": "herdr worktree remove",
+      "candidate_intent": "coding.worktree.remove",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarvis/omarvis/policy.py"
+    },
+    {
+      "project": "omarvis",
+      "source_kind": "dynamic_catalog",
+      "source_name": "omarchy commands --json",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarvis/omarvis/catalog.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "hypr_query",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "hypr_dispatch",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "send_shortcut",
+      "candidate_intent": "input.keypress",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "omarchy_cli",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "omarchy_help",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "launch_app",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "type_text",
+      "candidate_intent": "input.type_text",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "web_search",
+      "candidate_intent": "web.search",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "open_page",
+      "candidate_intent": "browser.navigate",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "read_terminal",
+      "candidate_intent": "terminal.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "list_terminals",
+      "candidate_intent": "terminal.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "run_in_terminal",
+      "candidate_intent": "terminal.run",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "watch_terminal",
+      "candidate_intent": "terminal.watch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "read_screen",
+      "candidate_intent": "screen.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "click_text",
+      "candidate_intent": "screen.click_text",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "compose_windows",
+      "candidate_intent": "window.compose",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "scroll",
+      "candidate_intent": "browser.page_scroll",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "wait_for",
+      "candidate_intent": "system.wait",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "clipboard",
+      "candidate_intent": "clipboard.manage",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "system_query",
+      "candidate_intent": "system.status_query",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "remember",
+      "candidate_intent": "notes.remember",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "run_shell",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "read_page_text",
+      "candidate_intent": "browser.page_read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "reveal_window",
+      "candidate_intent": "window.focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "camera_view",
+      "candidate_intent": "camera.inspect",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/vision.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "task_submit",
+      "candidate_intent": "task.submit",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "task_list",
+      "candidate_intent": "task.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "task_status",
+      "candidate_intent": "task.status",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "task_read",
+      "candidate_intent": "task.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "task_cancel",
+      "candidate_intent": "task.cancel",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py"
+    },
+    {
+      "project": "oma",
+      "source_kind": "tool",
+      "source_name": "task_resume",
+      "candidate_intent": "task.resume",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "command",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "terminal_command",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "desktop_app",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "focus_window",
+      "candidate_intent": "window.focus",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "window_action",
+      "candidate_intent": "window.close",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "focus_workspace",
+      "candidate_intent": "workspace.switch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "move_window",
+      "candidate_intent": "workspace.move_window",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "open_menu",
+      "candidate_intent": "system.menu_open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "type_text",
+      "candidate_intent": "input.type_text",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "motor_primitive",
+      "source_name": "wait",
+      "candidate_intent": "system.wait",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "desktop_app",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "terminal_executable",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "omarchy_command",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "system",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "open_window",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "window_action",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "workspace",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "discovery_source",
+      "source_name": "menu",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/src/types.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "run",
+      "candidate_intent": "agent.request",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "voice",
+      "candidate_intent": "speech.route",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "status",
+      "candidate_intent": "system.status_query",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "setup",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "doctor",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "vocab",
+      "candidate_intent": "speech.vocabulary_query",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "teach",
+      "candidate_intent": "speech.correction_save",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "cli_control",
+      "source_name": "help",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/omause/src/cli.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "dynamic_catalog",
+      "source_name": "omarchy commands --json",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omause/README.md"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "audio:volume:<percent>",
+      "candidate_intent": "audio.volume_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/audio.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "audio:mute",
+      "candidate_intent": "audio.mute",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/audio.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "audio:unmute",
+      "candidate_intent": "audio.unmute",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/audio.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "display:brighter",
+      "candidate_intent": "display.brightness_up",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/display.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "display:dimmer",
+      "candidate_intent": "display.brightness_down",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/display.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "display:brightness:<percent>",
+      "candidate_intent": "display.brightness_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/display.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "media:play-pause",
+      "candidate_intent": "media.play_pause",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/media.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "media:next",
+      "candidate_intent": "media.next",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/media.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "media:previous",
+      "candidate_intent": "media.previous",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/media.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "power:profile:<profile>",
+      "candidate_intent": "system.power_profile_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/power.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "power:battery-status",
+      "candidate_intent": "system.battery_query",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/power.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "network:wifi-on",
+      "candidate_intent": "network.wifi_enable",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/network.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "network:wifi-off",
+      "candidate_intent": "network.wifi_disable",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/network.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "network:down:<connection>",
+      "candidate_intent": "network.disconnect",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/network.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "network:up:<connection>",
+      "candidate_intent": "network.connect_saved",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/network.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "network:open:<ssid>",
+      "candidate_intent": "network.connect_open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/network.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "panel:bluetooth",
+      "candidate_intent": "system.panel_open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/shell.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "panel:network",
+      "candidate_intent": "system.panel_open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/shell.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "panel:power",
+      "candidate_intent": "system.panel_open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/shell.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "system_affordance",
+      "source_name": "panel:display",
+      "candidate_intent": "system.panel_open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/sources/shell.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "authored_mode",
+      "source_name": "notifications_silenced",
+      "candidate_intent": "system.notifications_silence_toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/registry.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "authored_mode",
+      "source_name": "nightlight",
+      "candidate_intent": "system.nightlight_toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/registry.ts"
+    },
+    {
+      "project": "omause",
+      "source_kind": "authored_mode",
+      "source_name": "idle_lock",
+      "candidate_intent": "system.idle_toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omause/src/registry.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "desktop_tool",
+      "source_name": "app_catalog",
+      "candidate_intent": "app.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "desktop_tool",
+      "source_name": "app_open",
+      "candidate_intent": "app.launch",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "desktop_tool",
+      "source_name": "desktop_state",
+      "candidate_intent": "window.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "desktop_tool",
+      "source_name": "window_action",
+      "candidate_intent": "window.manage",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "desktop_tool",
+      "source_name": "workspace_action",
+      "candidate_intent": "workspace.manage",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "desktop_tool",
+      "source_name": "omarchy_commands",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "web_tool",
+      "source_name": "web_handoff",
+      "candidate_intent": "browser.handoff",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/tools/web-handoff.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "capability_discovery",
+      "source_name": "capabilities",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "email_search",
+      "candidate_intent": "email.search",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "email_thread",
+      "candidate_intent": "email.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "email_send",
+      "candidate_intent": "email.send",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "email_reply",
+      "candidate_intent": "email.reply",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "calendar_list",
+      "candidate_intent": "calendar.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "calendar_events",
+      "candidate_intent": "calendar.events",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "calendar_todo_list",
+      "candidate_intent": "calendar.todo_list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "calendar_todo_create",
+      "candidate_intent": "calendar.todo_create",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "files_list",
+      "candidate_intent": "file.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "files_search",
+      "candidate_intent": "file.search",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "files_read",
+      "candidate_intent": "file.read",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "files_open",
+      "candidate_intent": "file.open",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "project_list",
+      "candidate_intent": "project.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "project_search",
+      "candidate_intent": "project.search",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "project_todos",
+      "candidate_intent": "project.todo_list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "project_todo_create",
+      "candidate_intent": "project.todo_create",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "project_comment",
+      "candidate_intent": "project.comment",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "signal_send",
+      "candidate_intent": "message.send",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omapilot",
+      "source_kind": "optional_capability_tool",
+      "source_name": "meeting_join",
+      "candidate_intent": "meeting.join",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts"
+    },
+    {
+      "project": "omarchy-stt",
+      "source_kind": "dictation_mode",
+      "source_name": "push_to_talk",
+      "candidate_intent": "dictation.capture",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-stt/README.md"
+    },
+    {
+      "project": "omarchy-stt",
+      "source_kind": "dictation_mode",
+      "source_name": "chat_mode",
+      "candidate_intent": "dictation.chat",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-stt/README.md"
+    },
+    {
+      "project": "omarchy-stt",
+      "source_kind": "dictation_mode",
+      "source_name": "quick_submit",
+      "candidate_intent": "dictation.submit",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-stt/README.md"
+    },
+    {
+      "project": "omarchy-stt",
+      "source_kind": "dictation_mode",
+      "source_name": "cancel",
+      "candidate_intent": "dictation.cancel",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omarchy-stt/README.md"
+    },
+    {
+      "project": "omarchy-stt",
+      "source_kind": "configurable_tool",
+      "source_name": "user_tools_json",
+      "candidate_intent": null,
+      "relationship": "open_ended_enabler",
+      "source": "../other-apps/omarchy-stt/src/tools.rs"
+    },
+    {
+      "project": "handy",
+      "source_kind": "dictation_control",
+      "source_name": "toggle",
+      "candidate_intent": "dictation.toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger"
+    },
+    {
+      "project": "handy",
+      "source_kind": "dictation_control",
+      "source_name": "stop",
+      "candidate_intent": "dictation.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger"
+    },
+    {
+      "project": "handy",
+      "source_kind": "dictation_control",
+      "source_name": "press",
+      "candidate_intent": "dictation.toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger"
+    },
+    {
+      "project": "handy",
+      "source_kind": "dictation_control",
+      "source_name": "release",
+      "candidate_intent": "dictation.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "dictation_control",
+      "source_name": "start",
+      "candidate_intent": "dictation.start",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/record.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "dictation_control",
+      "source_name": "stop",
+      "candidate_intent": "dictation.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/record.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "dictation_control",
+      "source_name": "toggle",
+      "candidate_intent": "dictation.toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/record.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "dictation_control",
+      "source_name": "cancel",
+      "candidate_intent": "dictation.cancel",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/record.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "daemon",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "transcribe",
+      "candidate_intent": "speech.transcribe_file",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "setup",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "config",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "info",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "configure",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "status",
+      "candidate_intent": "dictation.status",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "record",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "meeting",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "cli_control",
+      "source_name": "check_update",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype/src/cli/commands.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "start",
+      "candidate_intent": "meeting.start",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "stop",
+      "candidate_intent": "meeting.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "pause",
+      "candidate_intent": "meeting.pause",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "resume",
+      "candidate_intent": "meeting.resume",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "status",
+      "candidate_intent": "meeting.status",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "list",
+      "candidate_intent": "meeting.list",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "export",
+      "candidate_intent": "meeting.export",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "show",
+      "candidate_intent": "meeting.show",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "delete",
+      "candidate_intent": "meeting.delete",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "label",
+      "candidate_intent": "meeting.label",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voxtype",
+      "source_kind": "meeting_control",
+      "source_name": "summarize",
+      "candidate_intent": "meeting.summarize",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "dictation_control",
+      "source_name": "start",
+      "candidate_intent": "dictation.start",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "dictation_control",
+      "source_name": "stop",
+      "candidate_intent": "dictation.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "dictation_control",
+      "source_name": "toggle",
+      "candidate_intent": "dictation.toggle",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "dictation_control",
+      "source_name": "cancel",
+      "candidate_intent": "dictation.cancel",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "dictation_control",
+      "source_name": "restart",
+      "candidate_intent": "dictation.restart",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "history_show",
+      "candidate_intent": "dictation.history",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "history_list",
+      "candidate_intent": "dictation.history",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "history_paste",
+      "candidate_intent": "dictation.history_paste",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "status",
+      "candidate_intent": "dictation.status",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "diagnostics",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "asr_test",
+      "candidate_intent": "speech.transcribe_file",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "asr_stream_test",
+      "candidate_intent": "speech.transcribe_file",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "cli_control",
+      "source_name": "llm_test",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "daemon",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "record",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "hud",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "history",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "status",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "diagnostics",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "config",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "settings",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "settings_backend",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "setup",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "asr",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "llm",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "help",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voice-input",
+      "source_kind": "top_level_cli",
+      "source_name": "version",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voice-input/src/args.rs"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "bar_control",
+      "source_name": "open_settings",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype-enhance/bar/widget.qml"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "bar_control",
+      "source_name": "close_settings",
+      "candidate_intent": null,
+      "relationship": "non_intent_control",
+      "source": "../other-apps/voxtype-enhance/bar/widget.qml"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "bar_control",
+      "source_name": "show_recording_state",
+      "candidate_intent": "dictation.status",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype-enhance/bar/widget.qml"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "configuration",
+      "source_name": "model_download",
+      "candidate_intent": "speech.model_install",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "configuration",
+      "source_name": "engine_select",
+      "candidate_intent": "speech.engine_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "configuration",
+      "source_name": "language_select",
+      "candidate_intent": "speech.language_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "configuration",
+      "source_name": "output_mode",
+      "candidate_intent": "dictation.output_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py"
+    },
+    {
+      "project": "voxtype-enhance",
+      "source_kind": "configuration",
+      "source_name": "paste_keys",
+      "candidate_intent": "dictation.paste_keys_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "toggleSelection",
+      "candidate_intent": "speech.read_selection",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "readOcr",
+      "candidate_intent": "speech.read_screen",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "stop",
+      "candidate_intent": "speech.stop",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "setSpeed",
+      "candidate_intent": "speech.speed_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "setBackend",
+      "candidate_intent": "speech.backend_set",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "installVoice",
+      "candidate_intent": "speech.voice_install",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "speech_output_control",
+      "source_name": "selectVoice",
+      "candidate_intent": "speech.voice_select",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/Service.qml"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "announcement_event",
+      "source_name": "custom_stdin",
+      "candidate_intent": "speech.say",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/bin/yap"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "announcement_event",
+      "source_name": "task-complete",
+      "candidate_intent": "speech.say",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/bin/yap"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "announcement_event",
+      "source_name": "input-needed",
+      "candidate_intent": "speech.say",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/bin/yap"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "announcement_event",
+      "source_name": "permission-needed",
+      "candidate_intent": "speech.say",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/bin/yap"
+    },
+    {
+      "project": "omayap",
+      "source_kind": "announcement_event",
+      "source_name": "error",
+      "candidate_intent": "speech.say",
+      "relationship": "proposed_outcome",
+      "source": "../other-apps/omayap/bin/yap"
+    }
+  ]
+}

@@ -1,0 +1,4319 @@
+{
+  "schema_version": 1,
+  "surfaces": [
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "open_destination",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_destination",
+        "patterns": [
+          "open <destination>",
+          "bring up <destination>"
+        ],
+        "arguments": {
+          "destination": "$destination"
+        },
+        "command_template": "site:{destination}"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "close_browser_tabs",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "close_browser_tabs",
+        "patterns": [
+          "close all tabs",
+          "close all browser tabs",
+          "close all tabs in the browser",
+          "close all tabs on the browser",
+          "close all tabs in browser",
+          "close all tabs on browser"
+        ],
+        "arguments": {
+          "window": "the browser"
+        },
+        "command_template": "browser:close_tabs"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "list_windows",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "list_windows",
+        "patterns": [
+          "list open windows",
+          "list the open windows",
+          "what windows are open"
+        ],
+        "arguments": {},
+        "command_template": "windows:list"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "open_another_destination",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_another_destination",
+        "patterns": [
+          "open another <destination> tab",
+          "open a new <destination> tab"
+        ],
+        "arguments": {
+          "destination": "$destination"
+        },
+        "command_template": "site-new:{destination}"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "open_browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_application",
+        "patterns": [
+          "open <browser>",
+          "launch <browser>",
+          "focus <browser>",
+          "switch to <browser>"
+        ],
+        "arguments": {
+          "application": "$browser",
+          "presentation": "maximized"
+        },
+        "command_template": "browser"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "present_browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_application",
+        "patterns": [
+          "bring up <browser>"
+        ],
+        "arguments": {
+          "application": "$browser",
+          "presentation": "maximized"
+        },
+        "command_template": "browser_fullscreen"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "open_browser_and_tile",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_browser_and_tile",
+        "patterns": [
+          "open <browser_target> and tile",
+          "open <browser_target> and tile it"
+        ],
+        "arguments": {
+          "first": "this window",
+          "second": "the browser"
+        },
+        "command_template": "browser:open_tile"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "open_browser_fullscreen",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_browser_fullscreen",
+        "patterns": [
+          "open the browser",
+          "open browser",
+          "open <browser_target> in full screen",
+          "open <browser_target> in fullscreen",
+          "open <browser_target> full screen",
+          "open <browser_target> fullscreen"
+        ],
+        "arguments": {
+          "window": "the browser"
+        },
+        "command_template": "browser:open_fullscreen"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "open_app",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "open_application",
+        "patterns": [
+          "open <app>",
+          "bring up <app>",
+          "focus <app>",
+          "switch to <app>"
+        ],
+        "arguments": {
+          "application": "$app",
+          "presentation": "maximized"
+        },
+        "command_template": "{app}"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "close_app",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "close_window",
+        "patterns": [
+          "close <close_app>",
+          "close the <close_app>",
+          "close <close_app> window",
+          "close the <close_app> window"
+        ],
+        "arguments": {
+          "application": "$close_app",
+          "selection": "unique_or_choose"
+        },
+        "command_template": "close:{close_app}"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "move_app",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "move_application",
+        "patterns": [
+          "move <window_app> to other screen",
+          "move <window_app> to other monitor",
+          "move <window_app> to other window",
+          "move <window_app> to the other screen",
+          "move <window_app> to the other monitor",
+          "move <window_app> to the other window",
+          "move the <window_app> to other screen",
+          "move the <window_app> to other monitor",
+          "move the <window_app> to other window",
+          "move the <window_app> to the other screen",
+          "move the <window_app> to the other monitor",
+          "move the <window_app> to the other window"
+        ],
+        "arguments": {
+          "application": "$window_app",
+          "selection": "most_recent",
+          "monitor": "other"
+        },
+        "command_template": "move-app:{window_app}"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "maximize_app",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "maximize_window",
+        "patterns": [
+          "maximize <window_app>"
+        ],
+        "arguments": {
+          "application": "$window_app",
+          "selection": "most_recent",
+          "monitor": "current"
+        },
+        "command_template": "maximize:{window_app}"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "create_terminal",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "create_terminal",
+        "patterns": [
+          "open a new terminal",
+          "open a terminal",
+          "open terminal",
+          "open new terminal"
+        ],
+        "arguments": {},
+        "command_template": "terminal:new"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "close_terminal",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "close_window",
+        "patterns": [
+          "close terminal",
+          "close the terminal",
+          "close a terminal"
+        ],
+        "arguments": {
+          "application": "terminal",
+          "selection": "most_recent"
+        },
+        "command_template": "close:terminal"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "close_current_terminal",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "close_window",
+        "patterns": [
+          "close this terminal"
+        ],
+        "arguments": {
+          "application": "terminal",
+          "selection": "current"
+        },
+        "command_template": "close:terminal_current"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "maximize_current_window",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "maximize_window",
+        "patterns": [
+          "maximize this window",
+          "maximize the current window"
+        ],
+        "arguments": {
+          "application": "any",
+          "selection": "current",
+          "monitor": "current"
+        },
+        "command_template": "maximize:current_window"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "move_window",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "move_window",
+        "patterns": [
+          "move to other screen",
+          "move window to other screen",
+          "move to the other screen",
+          "move window to the other screen",
+          "move this window to the other screen"
+        ],
+        "arguments": {
+          "selection": "current",
+          "monitor": "other"
+        },
+        "command_template": "move:other_screen"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "show_windows",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "tile_windows",
+        "patterns": [
+          "show all windows",
+          "show all open windows",
+          "show all open window"
+        ],
+        "arguments": {
+          "workspace": "current"
+        },
+        "command_template": "windows:tile"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "tile_current_window_with_browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "tile_current_window_with_browser",
+        "patterns": [
+          "tile this window and the browser",
+          "tile this window and browser",
+          "tile the current window and the browser"
+        ],
+        "arguments": {
+          "first": "this window",
+          "second": "the browser"
+        },
+        "command_template": "windows:tile_current_browser"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "tile_windows",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "tile_windows",
+        "patterns": [
+          "tile open windows",
+          "tile all open windows",
+          "tile windows",
+          "tile all windows"
+        ],
+        "arguments": {
+          "workspace": "current"
+        },
+        "command_template": "windows:tile"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "tile_terminals",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "tile_terminals",
+        "patterns": [
+          "tile all the terminals",
+          "tile all terminals",
+          "tile terminals",
+          "tile the terminals",
+          "tile open terminals",
+          "tile all open terminals"
+        ],
+        "arguments": {
+          "workspace": "current"
+        },
+        "command_template": "terminals:tile"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "tile_browsers",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "tile_browsers",
+        "patterns": [
+          "tile all browsers",
+          "tile all the browsers",
+          "tile browsers",
+          "tile the browsers",
+          "tile open browsers",
+          "tile all browser windows"
+        ],
+        "arguments": {
+          "workspace": "current"
+        },
+        "command_template": "browsers:tile"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "hide_terminals",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "hide_windows",
+        "patterns": [
+          "hide all terminals"
+        ],
+        "arguments": {
+          "workspace": "current",
+          "category": "terminals"
+        },
+        "command_template": "terminals:hide"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "hide_apps",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "hide_windows",
+        "patterns": [
+          "hide all apps"
+        ],
+        "arguments": {
+          "workspace": "current",
+          "category": "apps"
+        },
+        "command_template": "apps:hide"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "hide_current_window",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "hide_window",
+        "patterns": [
+          "hide this window"
+        ],
+        "arguments": {
+          "selection": "current"
+        },
+        "command_template": "window:hide"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "tile_apps",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "tile_apps",
+        "patterns": [
+          "tile all apps",
+          "tile the apps"
+        ],
+        "arguments": {
+          "workspace": "current"
+        },
+        "command_template": "apps:tile"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "volume_up",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "volume up",
+          "turn the volume up",
+          "turn up the volume",
+          "louder"
+        ],
+        "arguments": {
+          "action": "volume:up"
+        },
+        "command_template": "volume:up"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "volume_down",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "volume down",
+          "turn the volume down",
+          "turn down the volume",
+          "quieter"
+        ],
+        "arguments": {
+          "action": "volume:down"
+        },
+        "command_template": "volume:down"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "volume_mute",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "mute",
+          "mute sound",
+          "mute the sound",
+          "mute audio"
+        ],
+        "arguments": {
+          "action": "volume:mute"
+        },
+        "command_template": "volume:mute"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "volume_unmute",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "unmute",
+          "unmute sound",
+          "unmute the sound",
+          "unmute audio"
+        ],
+        "arguments": {
+          "action": "volume:unmute"
+        },
+        "command_template": "volume:unmute"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "brightness_up",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "brightness up",
+          "increase brightness",
+          "brighter"
+        ],
+        "arguments": {
+          "action": "brightness:up"
+        },
+        "command_template": "brightness:up"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "brightness_down",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "brightness down",
+          "decrease brightness",
+          "dimmer"
+        ],
+        "arguments": {
+          "action": "brightness:down"
+        },
+        "command_template": "brightness:down"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "media_play",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "play music",
+          "play the music",
+          "resume music",
+          "resume playback"
+        ],
+        "arguments": {
+          "action": "media:play"
+        },
+        "command_template": "media:play"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "media_pause",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "pause music",
+          "pause the music",
+          "pause playback",
+          "stop the music"
+        ],
+        "arguments": {
+          "action": "media:pause"
+        },
+        "command_template": "media:pause"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "media_next",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "next song",
+          "next track",
+          "skip track",
+          "skip this song"
+        ],
+        "arguments": {
+          "action": "media:next"
+        },
+        "command_template": "media:next"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "grammar_rule",
+      "name": "media_previous",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "intent_type": "desktop_action",
+        "patterns": [
+          "previous song",
+          "previous track",
+          "go back a track"
+        ],
+        "arguments": {
+          "action": "media:previous"
+        },
+        "command_template": "media:previous"
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "apps:hide",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "hide_windows",
+        "arguments": {
+          "category": "apps",
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "apps:tile",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_apps",
+        "arguments": {
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "brightness:down",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "brightness:down"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "brightness:up",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "brightness:up"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_application",
+        "arguments": {
+          "application": "browser",
+          "presentation": "maximized"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "browser:close_tabs",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_browser_tabs",
+        "arguments": {
+          "window": "the browser"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "browser:open_fullscreen",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_browser_fullscreen",
+        "arguments": {
+          "window": "the browser"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "browser:open_tile",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_browser_and_tile",
+        "arguments": {
+          "first": "this window",
+          "second": "the browser"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "browser_fullscreen",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_application",
+        "arguments": {
+          "application": "browser",
+          "presentation": "maximized"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "browsers:tile",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_browsers",
+        "arguments": {
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "browser",
+          "selection": "unique_or_choose"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:discord",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "discord",
+          "selection": "unique_or_choose"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:files",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "files",
+          "selection": "unique_or_choose"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:tensaku",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "tensaku",
+          "selection": "unique_or_choose"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:terminal",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "terminal",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:terminal_current",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "terminal",
+          "selection": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "close:x",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "close_window",
+        "arguments": {
+          "application": "x",
+          "selection": "unique_or_choose"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "discord",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_application",
+        "arguments": {
+          "application": "discord",
+          "presentation": "maximized"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "maximize:browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "maximize_window",
+        "arguments": {
+          "application": "browser",
+          "monitor": "current",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "maximize:current_window",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "maximize_window",
+        "arguments": {
+          "application": "any",
+          "monitor": "current",
+          "selection": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "maximize:discord",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "maximize_window",
+        "arguments": {
+          "application": "discord",
+          "monitor": "current",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "maximize:x",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "maximize_window",
+        "arguments": {
+          "application": "x",
+          "monitor": "current",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "media:next",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "media:next"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "media:pause",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "media:pause"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "media:play",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "media:play"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "media:previous",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "media:previous"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "move-app:browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "move_application",
+        "arguments": {
+          "application": "browser",
+          "monitor": "other",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "move-app:discord",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "move_application",
+        "arguments": {
+          "application": "discord",
+          "monitor": "other",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "move-app:x",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "move_application",
+        "arguments": {
+          "application": "x",
+          "monitor": "other",
+          "selection": "most_recent"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "move:other_screen",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "move_window",
+        "arguments": {
+          "monitor": "other",
+          "selection": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "site-new:github",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_another_destination",
+        "arguments": {
+          "destination": "github"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "site-new:gmail",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_another_destination",
+        "arguments": {
+          "destination": "gmail"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "site:github",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_destination",
+        "arguments": {
+          "destination": "github"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "site:gmail",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_destination",
+        "arguments": {
+          "destination": "gmail"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "terminal:new",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "create_terminal",
+        "arguments": {}
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "terminals:hide",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "hide_windows",
+        "arguments": {
+          "category": "terminals",
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "terminals:tile",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_terminals",
+        "arguments": {
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "volume:down",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "volume:down"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "volume:mute",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "volume:mute"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "volume:unmute",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "volume:unmute"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "volume:up",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "desktop_action",
+        "arguments": {
+          "action": "volume:up"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "window:hide",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "hide_window",
+        "arguments": {
+          "selection": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "windows",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_windows",
+        "arguments": {
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "windows:list",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "list_windows",
+        "arguments": {}
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "windows:tile",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_windows",
+        "arguments": {
+          "workspace": "current"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "windows:tile_current_browser",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_current_window_with_browser",
+        "arguments": {
+          "first": "this window",
+          "second": "the browser"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "windows:tile_pair",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "tile_current_window_with_browser",
+        "arguments": {
+          "first": "this window",
+          "second": "the browser"
+        }
+      }
+    },
+    {
+      "project": "skipper",
+      "kind": "execution_id",
+      "name": "x",
+      "source": "../private/command_catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "schema_version": 1,
+        "type": "open_application",
+        "arguments": {
+          "application": "x",
+          "presentation": "maximized"
+        }
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "shutdown",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 119
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "reboot",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 120
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "logout",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 121
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "lock",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 122
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "suspend",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 123
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "screenshot",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 125
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "volume-up",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 127
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "volume-down",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 128
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "mute",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 129
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "media-play",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 131
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "media-pause",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 132
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "media-next",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 133
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "media-previous",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 134
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "brightness-up",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 136
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "brightness-down",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 137
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "speak",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 139
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "nightlight",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 140
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "idle",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 141
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "power-profile",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 142
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "workspace",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 143
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "theme",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 144
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "status",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 146
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "ha-toggle",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 158
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "ha-scene",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 164
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "tv",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 170
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "ipc",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 176
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "run",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 191
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "failed",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 224
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "open",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 231
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "reminder",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 241
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "executor_action",
+      "name": "agent",
+      "source": "../other-apps/genesis/bin/execute",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 255
+      }
+    },
+    {
+      "project": "genesis",
+      "kind": "configurable_surface",
+      "name": "custom_plugin_command",
+      "source": "../other-apps/genesis/bin/commands",
+      "availability": "configured",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "genesis",
+      "kind": "configurable_surface",
+      "name": "custom_script_command",
+      "source": "../other-apps/genesis/bin/commands",
+      "availability": "configured",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "genesis",
+      "kind": "configurable_surface",
+      "name": "scheduled_routine",
+      "source": "../other-apps/genesis/bin/routines",
+      "availability": "configured",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "genesis",
+      "kind": "configurable_surface",
+      "name": "agent_fallback",
+      "source": "../other-apps/genesis/bin/intent",
+      "availability": "configured",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser back",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser check <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser click <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser close [--all]",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser dblclick <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser download <selector|@ref> <path>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser drag <source> <target>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser fill <selector|@ref> \"<text>\"",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser find text \"<visible label>\" click",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser focus <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser forward",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser get <text|html|value|attr|title|url|count|box|styles> [selector]",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser hover <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser is <visible|enabled|checked> <selector>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser keyboard type \"<text>\"",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser open <url>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser press <key>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser reload",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser screenshot",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser scroll <up|down|left|right> [pixels]",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser scrollintoview <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser select <selector|@ref> <value>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser snapshot [-i] [-c] [-d <depth>]",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser tab close [ref]",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser tab list",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser tab new [url]",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser tab t2",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser type <selector|@ref> \"<text>\"",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser uncheck <selector|@ref>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser upload <selector|@ref> <path>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "browser_route",
+      "name": "agent-browser wait <selector|milliseconds>",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "declared",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent explain",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent focus",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent get",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent list",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent prompt",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent read",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent rename",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent send-keys",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr agent start",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr api snapshot",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr notification show",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane close",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane current",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane edges",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane focus",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane get",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane input",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane layout",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane list",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane move",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane neighbor",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane process-info",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane read",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane rename",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane resize",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane run",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane send-keys",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane send-text",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane split",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane swap",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr pane zoom",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr server reload-config",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr server stop",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr session delete",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr session list",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr session stop",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr status",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr tab close",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr tab create",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr tab focus",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr tab get",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr tab list",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr tab rename",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr workspace close",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr workspace create",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr workspace focus",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr workspace get",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr workspace list",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr workspace rename",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr worktree create",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr worktree list",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr worktree open",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "herdr_allowed_route",
+      "name": "herdr worktree remove",
+      "source": "../other-apps/omarvis/omarvis/policy.py",
+      "availability": "requires_herdr",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarvis",
+      "kind": "dynamic_catalog",
+      "name": "omarchy commands --json",
+      "source": "../other-apps/omarvis/omarvis/catalog.py",
+      "availability": "depends_on_installed_omarchy",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "hypr_query",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 420
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "hypr_dispatch",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 437
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "send_shortcut",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 456
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "omarchy_cli",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 478
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "omarchy_help",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 495
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "launch_app",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 517
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "type_text",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 538
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "web_search",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 554
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "open_page",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 586
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "read_terminal",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 608
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "list_terminals",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 628
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "run_in_terminal",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 637
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "watch_terminal",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 658
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "read_screen",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 676
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "click_text",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 708
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "compose_windows",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 735
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "scroll",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 803
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "wait_for",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 830
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "clipboard",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 854
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "system_query",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 872
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "remember",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 892
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "run_shell",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "allow_shell_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 914
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "read_page_text",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 932
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "reveal_window",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tools.py",
+      "availability": "declared",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 942
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "camera_view",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/vision.py",
+      "availability": "vision_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 44
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "task_submit",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py",
+      "availability": "tasks_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 66
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "task_list",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py",
+      "availability": "tasks_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 75
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "task_status",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py",
+      "availability": "tasks_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 76
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "task_read",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py",
+      "availability": "tasks_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 78
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "task_cancel",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py",
+      "availability": "tasks_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 81
+      }
+    },
+    {
+      "project": "oma",
+      "kind": "tool",
+      "name": "task_resume",
+      "source": "../other-apps/omarchy-voice/src/omarchy_voice/tasks.py",
+      "availability": "tasks_enabled",
+      "evidence_level": "source_declared",
+      "detail": {
+        "line": 83
+      }
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "command",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "terminal_command",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "desktop_app",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "app.launch",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "focus_window",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "window.focus",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "window_action",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "window.close",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "focus_workspace",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "workspace.switch",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "move_window",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "workspace.move_window",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "open_menu",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "system.menu_open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "type_text",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "input.type_text",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "motor_primitive",
+      "name": "wait",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": "system.wait",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "desktop_app",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "terminal_executable",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "omarchy_command",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "system",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "open_window",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "window_action",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "workspace",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "discovery_source",
+      "name": "menu",
+      "source": "../other-apps/omause/src/types.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "run",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": "agent.request",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "voice",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": "speech.route",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "status",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": "system.status_query",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "setup",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "doctor",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "vocab",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": "speech.vocabulary_query",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "teach",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": "speech.correction_save",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "cli_control",
+      "name": "help",
+      "source": "../other-apps/omause/src/cli.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "dynamic_catalog",
+      "name": "omarchy commands --json",
+      "source": "../other-apps/omause/README.md",
+      "availability": "depends_on_installed_omarchy",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "audio:volume:<percent>",
+      "source": "../other-apps/omause/src/sources/audio.ts",
+      "availability": "declared",
+      "candidate_intent": "audio.volume_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "audio:mute",
+      "source": "../other-apps/omause/src/sources/audio.ts",
+      "availability": "declared",
+      "candidate_intent": "audio.mute",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "audio:unmute",
+      "source": "../other-apps/omause/src/sources/audio.ts",
+      "availability": "declared",
+      "candidate_intent": "audio.unmute",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "display:brighter",
+      "source": "../other-apps/omause/src/sources/display.ts",
+      "availability": "declared",
+      "candidate_intent": "display.brightness_up",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "display:dimmer",
+      "source": "../other-apps/omause/src/sources/display.ts",
+      "availability": "declared",
+      "candidate_intent": "display.brightness_down",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "display:brightness:<percent>",
+      "source": "../other-apps/omause/src/sources/display.ts",
+      "availability": "declared",
+      "candidate_intent": "display.brightness_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "media:play-pause",
+      "source": "../other-apps/omause/src/sources/media.ts",
+      "availability": "declared",
+      "candidate_intent": "media.play_pause",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "media:next",
+      "source": "../other-apps/omause/src/sources/media.ts",
+      "availability": "declared",
+      "candidate_intent": "media.next",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "media:previous",
+      "source": "../other-apps/omause/src/sources/media.ts",
+      "availability": "declared",
+      "candidate_intent": "media.previous",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "power:profile:<profile>",
+      "source": "../other-apps/omause/src/sources/power.ts",
+      "availability": "declared",
+      "candidate_intent": "system.power_profile_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "power:battery-status",
+      "source": "../other-apps/omause/src/sources/power.ts",
+      "availability": "declared",
+      "candidate_intent": "system.battery_query",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "network:wifi-on",
+      "source": "../other-apps/omause/src/sources/network.ts",
+      "availability": "declared",
+      "candidate_intent": "network.wifi_enable",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "network:wifi-off",
+      "source": "../other-apps/omause/src/sources/network.ts",
+      "availability": "declared",
+      "candidate_intent": "network.wifi_disable",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "network:down:<connection>",
+      "source": "../other-apps/omause/src/sources/network.ts",
+      "availability": "declared",
+      "candidate_intent": "network.disconnect",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "network:up:<connection>",
+      "source": "../other-apps/omause/src/sources/network.ts",
+      "availability": "declared",
+      "candidate_intent": "network.connect_saved",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "network:open:<ssid>",
+      "source": "../other-apps/omause/src/sources/network.ts",
+      "availability": "declared",
+      "candidate_intent": "network.connect_open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "panel:bluetooth",
+      "source": "../other-apps/omause/src/sources/shell.ts",
+      "availability": "declared",
+      "candidate_intent": "system.panel_open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "panel:network",
+      "source": "../other-apps/omause/src/sources/shell.ts",
+      "availability": "declared",
+      "candidate_intent": "system.panel_open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "panel:power",
+      "source": "../other-apps/omause/src/sources/shell.ts",
+      "availability": "declared",
+      "candidate_intent": "system.panel_open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "system_affordance",
+      "name": "panel:display",
+      "source": "../other-apps/omause/src/sources/shell.ts",
+      "availability": "declared",
+      "candidate_intent": "system.panel_open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "authored_mode",
+      "name": "notifications_silenced",
+      "source": "../other-apps/omause/src/registry.ts",
+      "availability": "declared",
+      "candidate_intent": "system.notifications_silence_toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "authored_mode",
+      "name": "nightlight",
+      "source": "../other-apps/omause/src/registry.ts",
+      "availability": "declared",
+      "candidate_intent": "system.nightlight_toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omause",
+      "kind": "authored_mode",
+      "name": "idle_lock",
+      "source": "../other-apps/omause/src/registry.ts",
+      "availability": "declared",
+      "candidate_intent": "system.idle_toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "desktop_tool",
+      "name": "app_catalog",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts",
+      "availability": "declared",
+      "candidate_intent": "app.list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "desktop_tool",
+      "name": "app_open",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts",
+      "availability": "declared",
+      "candidate_intent": "app.launch",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "desktop_tool",
+      "name": "desktop_state",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts",
+      "availability": "declared",
+      "candidate_intent": "window.list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "desktop_tool",
+      "name": "window_action",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts",
+      "availability": "declared",
+      "candidate_intent": "window.manage",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "desktop_tool",
+      "name": "workspace_action",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts",
+      "availability": "declared",
+      "candidate_intent": "workspace.manage",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "desktop_tool",
+      "name": "omarchy_commands",
+      "source": "../other-apps/omapilot/runtime/src/tools/desktop.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "web_tool",
+      "name": "web_handoff",
+      "source": "../other-apps/omapilot/runtime/src/tools/web-handoff.ts",
+      "availability": "requires_configured_browser_handoff",
+      "candidate_intent": "browser.handoff",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "capability_discovery",
+      "name": "capabilities",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "email_search",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "email.search",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "email_thread",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "email.read",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "email_send",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "email.send",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "email_reply",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "email.reply",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "calendar_list",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "calendar.list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "calendar_events",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "calendar.events",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "calendar_todo_list",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "calendar.todo_list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "calendar_todo_create",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "calendar.todo_create",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "files_list",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "file.list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "files_search",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "file.search",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "files_read",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "file.read",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "files_open",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "file.open",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "project_list",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "project.list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "project_search",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "project.search",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "project_todos",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "project.todo_list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "project_todo_create",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "project.todo_create",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "project_comment",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "project.comment",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "signal_send",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "message.send",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omapilot",
+      "kind": "optional_capability_tool",
+      "name": "meeting_join",
+      "source": "../other-apps/omapilot/runtime/src/capabilities/tools.ts",
+      "availability": "requires_configured_connector",
+      "candidate_intent": "meeting.join",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarchy-stt",
+      "kind": "dictation_mode",
+      "name": "push_to_talk",
+      "source": "../other-apps/omarchy-stt/README.md",
+      "availability": "declared",
+      "candidate_intent": "dictation.capture",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarchy-stt",
+      "kind": "dictation_mode",
+      "name": "chat_mode",
+      "source": "../other-apps/omarchy-stt/README.md",
+      "availability": "declared",
+      "candidate_intent": "dictation.chat",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarchy-stt",
+      "kind": "dictation_mode",
+      "name": "quick_submit",
+      "source": "../other-apps/omarchy-stt/README.md",
+      "availability": "declared",
+      "candidate_intent": "dictation.submit",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarchy-stt",
+      "kind": "dictation_mode",
+      "name": "cancel",
+      "source": "../other-apps/omarchy-stt/README.md",
+      "availability": "declared",
+      "candidate_intent": "dictation.cancel",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omarchy-stt",
+      "kind": "configurable_tool",
+      "name": "user_tools_json",
+      "source": "../other-apps/omarchy-stt/src/tools.rs",
+      "availability": "requires_user_tool_definitions",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "handy",
+      "kind": "dictation_control",
+      "name": "toggle",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger",
+      "availability": "declared",
+      "candidate_intent": "dictation.toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "handy",
+      "kind": "dictation_control",
+      "name": "stop",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger",
+      "availability": "declared",
+      "candidate_intent": "dictation.stop",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "handy",
+      "kind": "dictation_control",
+      "name": "press",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger",
+      "availability": "declared",
+      "candidate_intent": "dictation.toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "handy",
+      "kind": "dictation_control",
+      "name": "release",
+      "source": "../other-apps/handy-plugin/bin/handy-trigger",
+      "availability": "declared",
+      "candidate_intent": "dictation.stop",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "dictation_control",
+      "name": "start",
+      "source": "../other-apps/voxtype/src/cli/record.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.start",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "dictation_control",
+      "name": "stop",
+      "source": "../other-apps/voxtype/src/cli/record.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.stop",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "dictation_control",
+      "name": "toggle",
+      "source": "../other-apps/voxtype/src/cli/record.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "dictation_control",
+      "name": "cancel",
+      "source": "../other-apps/voxtype/src/cli/record.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.cancel",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "daemon",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "transcribe",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": "speech.transcribe_file",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "setup",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "config",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "info",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "configure",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "status",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.status",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "record",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "meeting",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "cli_control",
+      "name": "check_update",
+      "source": "../other-apps/voxtype/src/cli/commands.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "start",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.start",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "stop",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.stop",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "pause",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.pause",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "resume",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.resume",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "status",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.status",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "list",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.list",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "export",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.export",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "show",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.show",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "delete",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.delete",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "label",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.label",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype",
+      "kind": "meeting_control",
+      "name": "summarize",
+      "source": "../other-apps/voxtype/src/cli/meeting.rs",
+      "availability": "declared",
+      "candidate_intent": "meeting.summarize",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "dictation_control",
+      "name": "start",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.start",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "dictation_control",
+      "name": "stop",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.stop",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "dictation_control",
+      "name": "toggle",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.toggle",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "dictation_control",
+      "name": "cancel",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.cancel",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "dictation_control",
+      "name": "restart",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.restart",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "history_show",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.history",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "history_list",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.history",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "history_paste",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.history_paste",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "status",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "dictation.status",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "diagnostics",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "asr_test",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "speech.transcribe_file",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "asr_stream_test",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": "speech.transcribe_file",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "cli_control",
+      "name": "llm_test",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "daemon",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "record",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "hud",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "history",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "status",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "diagnostics",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "config",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "settings",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "settings_backend",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "setup",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "asr",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "llm",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "help",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voice-input",
+      "kind": "top_level_cli",
+      "name": "version",
+      "source": "../other-apps/voice-input/src/args.rs",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "bar_control",
+      "name": "open_settings",
+      "source": "../other-apps/voxtype-enhance/bar/widget.qml",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "bar_control",
+      "name": "close_settings",
+      "source": "../other-apps/voxtype-enhance/bar/widget.qml",
+      "availability": "declared",
+      "candidate_intent": null,
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "bar_control",
+      "name": "show_recording_state",
+      "source": "../other-apps/voxtype-enhance/bar/widget.qml",
+      "availability": "declared",
+      "candidate_intent": "dictation.status",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "configuration",
+      "name": "model_download",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py",
+      "availability": "declared",
+      "candidate_intent": "speech.model_install",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "configuration",
+      "name": "engine_select",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py",
+      "availability": "declared",
+      "candidate_intent": "speech.engine_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "configuration",
+      "name": "language_select",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py",
+      "availability": "declared",
+      "candidate_intent": "speech.language_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "configuration",
+      "name": "output_mode",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py",
+      "availability": "declared",
+      "candidate_intent": "dictation.output_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "voxtype-enhance",
+      "kind": "configuration",
+      "name": "paste_keys",
+      "source": "../other-apps/voxtype-enhance/scripts/voxtype-config.py",
+      "availability": "declared",
+      "candidate_intent": "dictation.paste_keys_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "toggleSelection",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.read_selection",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "readOcr",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.read_screen",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "stop",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.stop",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "setSpeed",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.speed_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "setBackend",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.backend_set",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "installVoice",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.voice_install",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "speech_output_control",
+      "name": "selectVoice",
+      "source": "../other-apps/omayap/Service.qml",
+      "availability": "declared",
+      "candidate_intent": "speech.voice_select",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "announcement_event",
+      "name": "custom_stdin",
+      "source": "../other-apps/omayap/bin/yap",
+      "availability": "declared",
+      "candidate_intent": "speech.say",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "announcement_event",
+      "name": "task-complete",
+      "source": "../other-apps/omayap/bin/yap",
+      "availability": "declared",
+      "candidate_intent": "speech.say",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "announcement_event",
+      "name": "input-needed",
+      "source": "../other-apps/omayap/bin/yap",
+      "availability": "declared",
+      "candidate_intent": "speech.say",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "announcement_event",
+      "name": "permission-needed",
+      "source": "../other-apps/omayap/bin/yap",
+      "availability": "declared",
+      "candidate_intent": "speech.say",
+      "evidence_level": "source_declared"
+    },
+    {
+      "project": "omayap",
+      "kind": "announcement_event",
+      "name": "error",
+      "source": "../other-apps/omayap/bin/yap",
+      "availability": "declared",
+      "candidate_intent": "speech.say",
+      "evidence_level": "source_declared"
+    }
+  ]
+}
