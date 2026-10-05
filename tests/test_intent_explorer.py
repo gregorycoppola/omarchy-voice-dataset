@@ -11,8 +11,8 @@ class IntentExplorerTest(unittest.TestCase):
     def test_complete_iteration(self):
         intents = list(self.explorer.iter_intents())
         pairs = list(self.explorer.iter_pairs())
-        self.assertEqual(len(intents), 223)
-        self.assertEqual(len(pairs), 2230)
+        self.assertEqual(len(intents), 227)
+        self.assertEqual(len(pairs), 2270)
         self.assertTrue(all(len(intent.utterances) == 10 for intent in intents))
         self.assertEqual(len(list(self.explorer.iter_intents("audio."))), 6)
 

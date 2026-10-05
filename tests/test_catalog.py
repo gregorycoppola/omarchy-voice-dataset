@@ -9,7 +9,7 @@ class CatalogTests(unittest.TestCase):
         cls.catalog = Catalog()
 
     def test_every_intent_has_schema_examples_and_bindable_templates(self):
-        self.assertEqual(len(self.catalog.intents), 223)
+        self.assertEqual(len(self.catalog.intents), 227)
         for row in self.catalog.intents.values():
             self.assertEqual(row['arguments_schema']['type'], 'object')
             self.assertFalse(row['arguments_schema']['additionalProperties'])

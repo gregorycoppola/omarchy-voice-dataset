@@ -1,12 +1,12 @@
 # Python intent explorer
 
-Version 2 now defines structured schemas for all 223 intents. See
+Version 2 now defines structured schemas for all 227 intents. See
 [the current model and workflow](structured-intents.md). Historical counts and
 example lists below describe the original audit; use `data/catalog.json` and
 the browser explorer for current definitions.
 
 Run from the repository root with Python 3.10 or newer. The library loads all
-JSON files in `data/` and links the 223 outcome objects to their ten utterances.
+JSON files in `data/` and links the 227 outcome objects to their ten utterances.
 It does not execute desktop commands.
 
 ```python

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "catalog_revision": "c8db3a31ac454e25",
+  "catalog_revision": "6739990fd30f1963",
   "generated_from": "catalog.json",
   "status": "schema_defined_not_execution_validation",
   "intents": [
@@ -1382,9 +1382,20 @@
         "type": "object",
         "properties": {
           "url_or_destination": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Url or destination"
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "URL or destination; null requests an address entry prompt before navigation."
+          },
+          "new_window": {
+            "type": "boolean",
+            "description": "Open the destination in a new normal browser window."
           }
         },
         "required": [
@@ -1432,9 +1443,20 @@
       ],
       "slots": {
         "url_or_destination": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Url or destination"
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "URL or destination; null requests an address entry prompt before navigation."
+        },
+        "new_window": {
+          "type": "boolean",
+          "description": "Open the destination in a new normal browser window."
         }
       },
       "examples": [
@@ -7361,6 +7383,11 @@
               "current_workspace"
             ],
             "description": "Scope"
+          },
+          "application": {
+            "type": "string",
+            "minLength": 1,
+            "description": "App name or category to list, such as browser, terminal, x, or spotify; any means all apps."
           }
         },
         "required": [
@@ -7401,6 +7428,11 @@
             "current_workspace"
           ],
           "description": "Scope"
+        },
+        "application": {
+          "type": "string",
+          "minLength": 1,
+          "description": "App name or category to list, such as browser, terminal, x, or spotify; any means all apps."
         }
       },
       "examples": [
@@ -8669,6 +8701,20 @@
               "hide"
             ],
             "description": "Other windows"
+          },
+          "monitor": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "description": "One-based connected monitor ordinal, sorted by compositor monitor ID. Tile its active regular workspace; do not gather windows from other workspaces. Omit for current workspace."
           }
         },
         "required": [
@@ -8760,6 +8806,20 @@
             "hide"
           ],
           "description": "Other windows"
+        },
+        "monitor": {
+          "type": "string",
+          "enum": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "description": "One-based connected monitor ordinal, sorted by compositor monitor ID. Tile its active regular workspace; do not gather windows from other workspaces. Omit for current workspace."
         }
       },
       "examples": [
@@ -43214,6 +43274,467 @@
                 "kind": "current"
               },
               "operation": null
+            }
+          }
+        }
+      ],
+      "support": {}
+    },
+    {
+      "id": "screen_recording.start",
+      "description": "Start a screen recording",
+      "status": "schema_defined",
+      "schema_provenance": "authored shared contract",
+      "arguments_schema": {
+        "type": "object",
+        "properties": {
+          "profile": {
+            "type": "string",
+            "enum": [
+              "user_default"
+            ]
+          },
+          "webcam": {
+            "type": "boolean",
+            "description": "Whether to include webcam capture; omitted uses the recording profile default."
+          }
+        },
+        "required": [
+          "profile"
+        ],
+        "additionalProperties": false
+      },
+      "mapped_projects": [
+        "skipper"
+      ],
+      "sources": [],
+      "slots": {
+        "profile": {
+          "type": "string",
+          "enum": [
+            "user_default"
+          ]
+        },
+        "webcam": {
+          "type": "boolean",
+          "description": "Whether to include webcam capture; omitted uses the recording profile default."
+        }
+      },
+      "examples": [
+        {
+          "text": "start a new screen recording with web cam capture",
+          "parsed": {
+            "intent": "screen_recording.start",
+            "arguments": {
+              "profile": "user_default",
+              "webcam": true
+            }
+          }
+        },
+        {
+          "text": "start a new screen recording with webcam capture",
+          "parsed": {
+            "intent": "screen_recording.start",
+            "arguments": {
+              "profile": "user_default",
+              "webcam": true
+            }
+          }
+        }
+      ],
+      "support": {}
+    },
+    {
+      "id": "screen_recording.stop",
+      "description": "Stop a screen recording",
+      "status": "schema_defined",
+      "schema_provenance": "authored shared contract",
+      "arguments_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "mapped_projects": [
+        "skipper"
+      ],
+      "sources": [],
+      "slots": {},
+      "examples": [
+        {
+          "text": "stop recording",
+          "parsed": {
+            "intent": "screen_recording.stop",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "stop the recording",
+          "parsed": {
+            "intent": "screen_recording.stop",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {}
+    },
+    {
+      "id": "system.screensaver",
+      "description": "Start the screensaver",
+      "status": "schema_defined",
+      "schema_provenance": "authored shared contract",
+      "arguments_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "mapped_projects": [
+        "skipper"
+      ],
+      "source_mappings": [],
+      "slots": {},
+      "examples": [
+        {
+          "text": "start screensaver",
+          "parsed": {
+            "intent": "system.screensaver",
+            "arguments": {}
+          }
+        },
+        {
+          "text": "screensaver",
+          "parsed": {
+            "intent": "system.screensaver",
+            "arguments": {}
+          }
+        }
+      ],
+      "support": {}
+    },
+    {
+      "id": "window.move_workspace",
+      "description": "Move a window to a numbered workspace",
+      "status": "schema_defined",
+      "schema_provenance": "authored shared contract",
+      "arguments_schema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "current"
+                  }
+                },
+                "required": [
+                  "kind"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "named"
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "id"
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "application"
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "result"
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "context"
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "all"
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            ],
+            "description": "Reference to a window. Resolve against captured context; result names an earlier step. IDs must come from the supplied context.",
+            "x-value-source": "window"
+          },
+          "workspace": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "id"
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "kind",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "target",
+          "workspace"
+        ],
+        "additionalProperties": false
+      },
+      "mapped_projects": [
+        "skipper"
+      ],
+      "source_mappings": [],
+      "slots": {
+        "target": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "current"
+                }
+              },
+              "required": [
+                "kind"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "named"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "id"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "application"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "result"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "context"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "all"
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "kind",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "description": "Reference to a window. Resolve against captured context; result names an earlier step. IDs must come from the supplied context.",
+          "x-value-source": "window"
+        },
+        "workspace": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "id"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "examples": [
+        {
+          "text": "move this window to workspace 1",
+          "parsed": {
+            "intent": "window.move_workspace",
+            "arguments": {
+              "target": {
+                "kind": "current"
+              },
+              "workspace": {
+                "kind": "id",
+                "value": "1"
+              }
+            }
+          }
+        },
+        {
+          "text": "move this window to workspace 2",
+          "parsed": {
+            "intent": "window.move_workspace",
+            "arguments": {
+              "target": {
+                "kind": "current"
+              },
+              "workspace": {
+                "kind": "id",
+                "value": "2"
+              }
             }
           }
         }

@@ -1,7 +1,7 @@
 # Omarchy voice intent dataset
 
-The active **version 2 catalog** defines all 223 intents as names plus structured
-arguments, with 2,230 labeled examples and grammar templates. Skipper reads its
+The active **version 2 catalog** defines all 227 intents as names plus structured
+arguments, with 2,270 labeled examples and grammar templates. Skipper reads its
 grammar and vocabulary directly from this repository. Start with
 [the structured intent model and editing workflow](docs/structured-intents.md).
 
@@ -25,18 +25,18 @@ application. Public snapshots are published at
 | [data/projects.json](data/projects.json) | Twelve known voice-related projects, pinned source commits, and their audit state. |
 | [data/snapshot.json](data/snapshot.json) | Exact commits for eleven clean external clones, plus a content digest and file hashes for private Skipper source. No private commit ID is copied. |
 | [data/source-surfaces.json](data/source-surfaces.json) | Declared rules, action handlers, routes, tools, dictation controls, and speech output controls from the twelve source trees. |
-| [data/intents.json](data/intents.json) | Generated view of all 223 structured intent definitions. |
+| [data/intents.json](data/intents.json) | Generated view of all 227 structured intent definitions. |
 | [data/surface-crosswalk.json](data/surface-crosswalk.json) | A proposed mapping of each source surface to one outcome, component intents for a composite command, or an open-ended enabler. |
 | [data/outcomes.json](data/outcomes.json) | One candidate outcome list spanning all twelve projects, with schema status and mapped projects. |
 | [docs/intent-coverage.md](docs/intent-coverage.md) | Markdown coverage matrix for 55 reviewed intents and grouped list of 168 additional candidates. |
-| [data/utterances.json](data/utterances.json) | 2,230 illustrative utterances, ten per candidate intent; origin and argument labels are explicit. |
+| [data/utterances.json](data/utterances.json) | 2,270 illustrative utterances, ten per candidate intent; origin and argument labels are explicit. |
 | [data/segmentation-examples.json](data/segmentation-examples.json) | Skipper browser commands and proposed multi-intent utterances with clause labels. |
 | [data/command-sequences.json](data/command-sequences.json) | Ordered references to individual intent examples, with connectors and source macro evidence. |
 | [docs/utterance-variants.md](docs/utterance-variants.md) | Readable list of ten ways to say each intent. |
 | [docs/intent-explorer.md](docs/intent-explorer.md) | Python API and CLI for iterating through intents and utterances. |
 | [docs/segmentation.md](docs/segmentation.md) | Why Skipper compound commands need a separate segmentation and context stage. |
 | [docs/command-sequences.md](docs/command-sequences.md) | Data model and Python API for composing individual commands into sequences. |
-| [explorer.html](explorer.html) | Browser view of all 223 intents, their ten phrases, and command sequences. |
+| [explorer.html](explorer.html) | Browser view of all 227 intents, their ten phrases, and command sequences. |
 | [docs/parsing-strategies.md](docs/parsing-strategies.md) | Proposed parser approaches and a fair comparison method. |
 | [data/local-omarchy-routes.json](data/local-omarchy-routes.json) | The 387 public Omarchy CLI routes exposed by this machine on the snapshot day. These are dynamic environment data for Omarvis/OMA, not voice test results. |
 | [surfaces.html](surfaces.html) | Searchable view of every inventoried static source surface and its proposed outcome. |
@@ -44,7 +44,7 @@ application. Public snapshots are published at
 | [docs/verification.md](docs/verification.md) | Tests actually run, failures, and limits of what “working” means here. |
 | [index.html](index.html) | Searchable view of the 55 reviewed intents. Serve the parent workspace so source links work. |
 
-The current crosswalk has **393 source surfaces** and **223 candidate outcomes**,
+The preserved source-audit crosswalk has **393 source surfaces** and **223 candidate outcomes**,
 including **168 that originally lacked typed schemas**; all now have authored shared schemas. A source surface is a declared rule,
 executor branch, allowed route, or tool; it is not necessarily a unique user
 feature. Skipper grammar rules and execution IDs intentionally overlap. Its

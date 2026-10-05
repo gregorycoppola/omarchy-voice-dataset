@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "catalog_revision": "c8db3a31ac454e25",
+  "catalog_revision": "6739990fd30f1963",
   "generated_from": "catalog.json",
   "status": "schema_defined_not_execution_validation",
   "snapshot_date": "2026-09-24",
@@ -27154,6 +27154,476 @@
       "origin": "synthetic_frame",
       "base_variant": 2,
       "frame": "need_you_to"
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 1,
+      "text": "start a new screen recording with web cam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": true
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 2,
+      "text": "start a new screen recording with webcam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": true
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 3,
+      "text": "start a screen recording with web cam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": true
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 4,
+      "text": "start a screen recording with webcam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": true
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 5,
+      "text": "start screen recording with web cam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": true
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 6,
+      "text": "start a new screen recording without web cam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": false
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 7,
+      "text": "start a new screen recording without webcam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": false
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 8,
+      "text": "start a screen recording without web cam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": false
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 9,
+      "text": "start a screen recording without webcam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": false
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.start",
+      "variant": 10,
+      "text": "start screen recording without web cam capture",
+      "arguments": {
+        "profile": "user_default",
+        "webcam": false
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 1,
+      "text": "stop recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 2,
+      "text": "stop the recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 3,
+      "text": "stop screen recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 4,
+      "text": "stop the screen recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 5,
+      "text": "end recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 6,
+      "text": "end the recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 7,
+      "text": "end screen recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 8,
+      "text": "finish recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 9,
+      "text": "finish the screen recording",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "screen_recording.stop",
+      "variant": 10,
+      "text": "stop recording my screen",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 1,
+      "text": "start screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 2,
+      "text": "screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 3,
+      "text": "start the screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 4,
+      "text": "show screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 5,
+      "text": "turn on the screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 6,
+      "text": "start screen saver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 7,
+      "text": "screen saver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 8,
+      "text": "show the screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 9,
+      "text": "activate screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "system.screensaver",
+      "variant": 10,
+      "text": "run screensaver",
+      "arguments": {},
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 1,
+      "text": "move this window to workspace 1",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "1"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 2,
+      "text": "move this window to workspace 2",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "2"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 3,
+      "text": "move this window to workspace 3",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "3"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 4,
+      "text": "move this window to workspace 4",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "4"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 5,
+      "text": "move this window to workspace 5",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "5"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 6,
+      "text": "move this window to workspace 6",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "6"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 7,
+      "text": "move this window to workspace 7",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "7"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 8,
+      "text": "move this window to workspace 8",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "8"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 9,
+      "text": "move this window to workspace 9",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "9"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
+    },
+    {
+      "intent": "window.move_workspace",
+      "variant": 10,
+      "text": "move this window to workspace 10",
+      "arguments": {
+        "target": {
+          "kind": "current"
+        },
+        "workspace": {
+          "kind": "id",
+          "value": "10"
+        }
+      },
+      "origin": "typed_seed_illustration",
+      "base_variant": null,
+      "frame": null
     }
   ]
 }

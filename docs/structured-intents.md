@@ -1,6 +1,6 @@
 # Structured intent catalog and Skipper integration
 
-The active source of truth is `data/catalog.json`: 223 named intents with closed
+The active source of truth is `data/catalog.json`: 227 named intents with closed
 JSON argument schemas, ten labeled examples each, and grammar templates binding
 spoken slots into those arguments. These are authored shared contracts. A schema
 being defined does not establish that every upstream project implements it.
